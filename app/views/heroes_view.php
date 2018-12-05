@@ -1,14 +1,14 @@
-<h1>Портфолио</h1>
+<?php use \App\Hero; ?>
+<h1>hero</h1>
 <p>
-<table>
-    Все проекты в следующей таблице являются вымышленными, поэтому даже не пытайтесь перейти по приведенным ссылкам.
-    <tr><td>Год</td><td>Проект</td><td>Описание</td></tr>
+    <table>
+    Таблица
+    <tr><td>Имя</td><td>Интеллект</td><td>Скорость передвижения</td><td>Броня</td></tr>
     <?php
-
-    foreach($data as $row)
-    {
-        echo '<tr><td>'.$row['Year'].'</td><td>'.$row['Site'].'</td><td>'.$row['Description'].'</td></tr>';
-    }
+    /*$hero = new Model_Heroes();
+    $hero1 = $hero->get_data(1);*/
+    foreach ($data as $row)
+    echo '<tr><td>'.$row['name'].'</td>'.'<td>'.$row['intelligence'].'</tr></tr>';
 
     ?>
 </table>

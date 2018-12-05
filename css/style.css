@@ -1,15 +1,4 @@
-﻿﻿/*
-Design by Free CSS Templates
-http://www.freecsstemplates.org
-Released for free under a Creative Commons Attribution 3.0 License
-
-Name       : Accumen
-Description: A two-column, fixed-width design with dark color scheme.
-Version    : 1.0
-Released   : 20120712
-*/
-
-* {
+﻿* {
     margin: 0;
     padding: 0;
 }
@@ -25,7 +14,7 @@ a:hover {
 
 body {
     line-height: 1.75em;
-    background: #fff url('../images/00bd.png');
+    background: #ffffff;
 
     font-size: 11.5pt;
     color: #353535;

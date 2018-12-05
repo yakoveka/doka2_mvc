@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="description" content="" />
     <meta name="keywords" content="" />
-    <title>ОЛОЛОША TEAM</title>
+    <title>Learning dota2</title>
     <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css" />
     <link href="http://fonts.googleapis.com/css?family=Kreon" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
@@ -18,8 +18,8 @@
         $(document).ready(function() {
             var quotes = $('.quote');
             quotes.hide();
-            var qlen = quotes.length; //document.write( random(qlen-1) );
-            $( '.quote:eq(' + random(qlen-1) + ')' ).show(); //tag:eq(1)
+            var qlen = quotes.length;
+            $( '.quote:eq(' + random(qlen-1) + ')' ).show();
         });
     </script>
 </head>

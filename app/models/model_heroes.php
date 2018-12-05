@@ -1,20 +1,17 @@
 <?php
+require 'connection.php';
 class Model_Heroes extends Model
 {
     public function get_data()
     {
-        return array(
+        $databaseConnection = new DatabaseConnect('root');
+        $pdo = $databaseConnection->getPdo();
 
-            array(
-                'Year' => '2012',
-                'Site' => 'http://DunkelBeer.ru',
-                'Description' => 'Промо-сайт темного пива Dunkel от немецкого производителя Löwenbraü выпускаемого в России пивоваренной компанией "CАН ИнБев".'
-            ),
-            array(
-                'Year' => '2012',
-                'Site' => 'http://ZopoMobile.ru',
-                'Description' => 'Русскоязычный каталог китайских телефонов компании Zopo на базе Android OS и аксессуаров к ним.'
-            )
-        );
+        $query = "SELECT * from heroes WHERE id=:id";
+        $cat = $pdo->prepare($query);
+        $cat->setFetchMode(PDO::FETCH_CLASS, 'Hero');
+        $cat->execute(['id'=>1]);
+        $hero=$cat->fetch();
+        return array($hero);
     }
 }
