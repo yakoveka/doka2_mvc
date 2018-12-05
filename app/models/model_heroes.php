@@ -14,4 +14,9 @@ class Model_Heroes extends Model
         $hero=$cat->fetch();
         return array($hero);
     }
+
+    public function get_Heroes()
+    {
+
+    }
 }

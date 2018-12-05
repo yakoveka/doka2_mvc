@@ -12,4 +12,10 @@ class Controller_Heroes extends Controller
         $data = $this->model->get_data();
         $this->view->generate('heroes_view.php', 'template_view.php', $data);
     }
+
+    function action_heroes()
+    {
+        $data = $this->model->get_Heroes();
+        $this->view->generate('heroes_view.php', 'template_view.php', $data);
+    }
 }
