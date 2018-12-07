@@ -17,6 +17,10 @@ class Route
             $action_name = $routes[2];
         }
 
+        if (!empty($routes[3])){
+            $id_name = $routes[3];
+        }
+
         $model_name = 'model_' . $controller_name;
         $controller_name = 'controller_' . $controller_name;
         $action_name = 'action_' . $action_name;
@@ -36,11 +40,19 @@ class Route
         }
         $controller = new $controller_name;
         $action = $action_name;
-
-        if (method_exists($controller, $action)) {
-            $controller->$action();
-        } else {
-            Route::ErrorPage404();
+        if(empty($id_name)) {
+            if (method_exists($controller, $action)) {
+                $controller->$action();
+            } else {
+                Route::ErrorPage404();
+            }
+        }
+        if(!empty($id_name)) {
+            if (method_exists($controller, $action)) {
+                $controller->$action($id_name);
+            } else {
+                Route::ErrorPage404();
+            }
         }
     }
 

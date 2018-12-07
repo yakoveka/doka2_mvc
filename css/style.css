@@ -77,6 +77,16 @@ a {
     color: #353535;
 }
 
+#page a.main_char{
+    display: inline-block;
+    text-decoration: none;
+    padding: 20px 20px;
+    color: #EC4D3C;
+    background-color: white;
+    background-size: 12px 12px;
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+}
+
 #content {
     padding: 0 0 0 10px;
     width: 615px;

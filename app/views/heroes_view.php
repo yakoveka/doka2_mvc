@@ -1,15 +1,14 @@
-<?php use \App\Hero; ?>
-<h1>hero</h1>
+<h1 >Герои</h1>
 <p>
     <table>
-    Таблица
-    <tr><td>Имя</td><td>Интеллект</td><td>Скорость передвижения</td><td>Броня</td></tr>
+    Таблица героев<br/>
+    <a href="/heroes/main_characteristic/intelligence" class="main_char">Интеллект</a>
+    <a href="/heroes/main_characteristic/agility" class="main_char">Ловкость</a>
+    <a href="/heroes/main_characteristic/strength" class="main_char">Сила</a>
+    <tr><td>Имя</td></tr>
     <?php
-    /*$hero = new Model_Heroes();
-    $hero1 = $hero->get_data(1);*/
-    foreach ($data as $row)
-    {echo '<tr><td>'.$row['name'].'</td>'.'<td>'.$row['intelligence'].'</tr></tr>';}
-
+    foreach ($data as $row) {
+        echo '<tr><td><a href="/heroes/hero/'.$row['id'].'">'.$row['name'].'</a></td></tr>';}
     ?>
 </table>
 </p>

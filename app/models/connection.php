@@ -12,5 +12,6 @@ class DatabaseConnect {
                 echo "Error";
             }
         }
+
     }
 }
