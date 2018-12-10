@@ -17,7 +17,7 @@ class Route
             $action_name = $routes[2];
         }
 
-        if (!empty($routes[3])){
+        if (!empty($routes[3])) {
             $id_name = $routes[3];
         }
 
@@ -40,22 +40,63 @@ class Route
         }
         $controller = new $controller_name;
         $action = $action_name;
-        if(empty($id_name)) {
-            if (method_exists($controller, $action)) {
-                $controller->$action();
-            } else {
+        switch ($routes[1]) {
+            case "":
+                {
+                    if (method_exists($controller, $action))
+                        $controller->$action();
+                }
+            case 'heroes':
+                {
+                    if (empty($id_name)){
+                        if (method_exists($controller, $action))
+                            $controller->$action();}
+                    else
+                        if (method_exists($controller, $action))
+                            $controller->$action($id_name);
+                    break;
+                }
+            case 'login':
+                {
+                    if (!empty($routes[2]) and $routes[2] == 'check') {
+                        $user_login = $_POST['login'];
+                        $user_password = $_POST['password'];
+                        $controller->$action($user_login, $user_password);
+                    }
+                    elseif (method_exists($controller, $action))
+                        $controller->$action();
+                    break;
+                }
+            case 'items':
+                {
+                    if (method_exists($controller, $action))
+                        $controller->$action();
+                    break;
+                }
+            case 'posts':
+                {
+                    if (method_exists($controller, $action))
+                        $controller->$action();
+                    break;
+                }
+            case 'register':
+                {
+                    if (!empty($routes[2]) and $routes[2] == 'writeUser') {
+                        $first_name = $_POST['first_name'];
+                        $last_name = $_POST['last_name'];
+                        $user_login = $_POST['login'];
+                        $user_password = $_POST['password'];
+                        $user_email = $_POST['email'];
+                        $controller->$action($first_name, $last_name, $user_email, $user_login, $user_password);
+                    }
+                    if (method_exists($controller, $action))
+                        $controller->$action();
+                }
+            default:
                 Route::ErrorPage404();
-            }
-        }
-        if(!empty($id_name)) {
-            if (method_exists($controller, $action)) {
-                $controller->$action($id_name);
-            } else {
-                Route::ErrorPage404();
-            }
+
         }
     }
-
     function ErrorPage404()
     {
         $host = 'http://' . $_SERVER['HTTP_HOST'] . '/';

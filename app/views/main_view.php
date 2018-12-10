@@ -2,3 +2,4 @@
 <p>
     <a href="/">doka2.common</a>
 </p>
+<? echo $data;?>

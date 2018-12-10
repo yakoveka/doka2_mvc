@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css" />
     <script src="/js/jquery-1.6.2.js" type="text/javascript"></script>
     <script type="text/javascript">
-        function random(number) {
+        /*function random(number) {
 
             return Math.floor( Math.random()*(number+1) );
         };
@@ -20,13 +20,26 @@
             quotes.hide();
             var qlen = quotes.length;
             $( '.quote:eq(' + random(qlen-1) + ')' ).show();
-        });
+        });*/
     </script>
 </head>
+
 <body>
 <div id="wrapper">
     <div id="header">
+        <?php if (empty($_SESSION['login'])): ?>
+        <ul>
+            <li class="first active"><a href="/login">Войти</a></li>
+            <li><a href="/register">Зарегистрироваться</a></li>
+        </ul>
+        <?php endif; ?>
+        <?php if(!empty($_SESSION['login'])): ?>
+        <ul>
+            <li class="first active"><a href="/login/logout">Выйти</a></li>
+        </ul>
+        <?php endif; ?>
         <div id="menu">
+
             <ul>
                 <li class="first active"><a href="/">Главная</a></li>
                 <li><a href="/heroes">Герои</a></li>

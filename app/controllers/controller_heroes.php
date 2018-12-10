@@ -6,7 +6,7 @@ class Controller_Heroes extends Controller
         $this->model = new Model_Heroes();
         $this->view = new View();
     }
-
+    
     function action_hero($hero_id)
     {
         $data = $this->model->get_data_hero($hero_id);
