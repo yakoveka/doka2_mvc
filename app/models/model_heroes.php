@@ -24,7 +24,7 @@ class Model_Heroes extends Model
     public function get_Heroes()
     {
         $pdo=$this->connectBD();
-        for($i=1;$i<11;$i++)
+        for($i=1;$i<117;$i++)
         {
             $query = "SELECT * from heroes WHERE id=:id";
             $cat = $pdo->prepare($query);
@@ -38,7 +38,7 @@ class Model_Heroes extends Model
 
     public function get_data_by_main_char($main_char){
         $pdo=$this->connectBD();
-        for($i=1;$i<11;$i++) {
+        for($i=1;$i<117;$i++) {
             $query = "SELECT * from heroes WHERE id=:id";
             $cat = $pdo->prepare($query);
             $cat->setFetchMode(PDO::FETCH_CLASS, 'Hero');

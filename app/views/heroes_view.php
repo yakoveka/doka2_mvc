@@ -1,14 +1,23 @@
-<h1 >Герои</h1>
-<p>
-    <table>
-    Таблица героев<br/>
-    <a href="/heroes/main_characteristic/intelligence" class="main_char">Интеллект</a>
-    <a href="/heroes/main_characteristic/agility" class="main_char">Ловкость</a>
-    <a href="/heroes/main_characteristic/strength" class="main_char">Сила</a>
-    <tr><td>Имя</td></tr>
+<script language="JavaScript" type="text/javascript">
+    function linklist(what) {
+        var selectedopt = what.options[what.selectedIndex]
+        if (document.getElementById && selectedopt.getAttribute("target") == "new")
+            window.open(selectedopt.value)
+        else
+            window.location = selectedopt.value
+    }
+</script>
+<h1>Герои</h1>
+<form name="menu"><select class="selector_main_char" name="s1" onchange="linklist(document.menu.s1)">
+        <option value="#">Главная характеристика</option>
+        <option title="переход на Интеллект" value="/heroes/main_characteristic/Intelligence">Интеллект</option>
+        <option title="переход на ловкость" value="/heroes/main_characteristic/Agility">Ловкость</option>
+        <option title="переход на силу" value="/heroes/main_characteristic/Strength">Сила</option>
+    </select>
+</form>
+<div class="heroes">
     <?php
-    foreach ($data as $row) {
-        echo '<tr><td><a href="/heroes/hero/'.$row['id'].'">'.$row['name'].'</a></td></tr>';}
-    ?>
-</table>
-</p>
+    foreach ($data as $row) { ?>
+    <?php echo '<a href="/heroes/'.$row['id'].'"class="hero_item">';?><img src="<?php echo $row['picture']; ?>" width="140" height="140" title="<?php echo $row['name']?>"></a>
+    <?php } ?>
+</div>

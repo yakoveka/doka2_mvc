@@ -17,9 +17,7 @@ class Route
             $action_name = $routes[2];
         }
 
-        if (!empty($routes[3])) {
-            $id_name = $routes[3];
-        }
+
 
         $model_name = 'model_' . $controller_name;
         $controller_name = 'controller_' . $controller_name;
@@ -45,16 +43,49 @@ class Route
                 {
                     if (method_exists($controller, $action))
                         $controller->$action();
+                    break;
                 }
             case 'heroes':
                 {
-                    if (empty($id_name)){
-                        if (method_exists($controller, $action))
-                            $controller->$action();}
-                    else
-                        if (method_exists($controller, $action))
-                            $controller->$action($id_name);
+                    if(!empty($routes[2]))
+                    {
+                        switch($routes[2]) {
+                            case 'main_characteristic':
+                                {
+                                    $id_name=$routes[3];
+                                    if(method_exists($controller, $action))
+                                        $controller->$action($id_name);
+                                    break;
+                                }
+                            default:
+                                {
+                                    $action="action_hero";
+                                    //if (empty($id_name))
+                                    $id_name=$routes[2];
+                                    if(method_exists($controller, $action))
+                                        $controller->$action($id_name);
+                                    break;
+                                }
+                        }
+                    }
+                    else if(method_exists($controller, $action))
+                        $controller->$action();
                     break;
+
+
+                    /*if (!empty($routes[2]) and $routes[2]!='main_characteristic') {
+                        $id_name = $routes[2];
+                    }
+                    $action="action_hero";
+                    if (empty($id_name))
+                    {
+                        $action="action_index";
+                        if (method_exists($controller, $action))
+                            $controller->$action();
+                    }
+                    elseif (method_exists($controller, $action))
+                            $controller->$action($id_name);*/
+
                 }
             case 'login':
                 {
@@ -91,6 +122,7 @@ class Route
                     }
                     if (method_exists($controller, $action))
                         $controller->$action();
+                    break;
                 }
             default:
                 Route::ErrorPage404();

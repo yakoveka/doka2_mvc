@@ -29,13 +29,13 @@
     <div id="header">
         <?php if (empty($_SESSION['login'])): ?>
         <ul>
-            <li class="first active"><a href="/login">Войти</a></li>
-            <li><a href="/register">Зарегистрироваться</a></li>
+            <li class="login"><a href="/login">Войти</a></li>
+            <li class="login"><a href="/register">Зарегистрироваться</a></li>
         </ul>
         <?php endif; ?>
         <?php if(!empty($_SESSION['login'])): ?>
         <ul>
-            <li class="first active"><a href="/login/logout">Выйти</a></li>
+            <li class="login"><a href="/login/logout"><?php echo $_SESSION['login']?></a></li>
         </ul>
         <?php endif; ?>
         <div id="menu">
@@ -50,7 +50,7 @@
         </div>
     </div>
     <div id="page">
-        <div id="sidebar">
+        <!--<div id="sidebar">
             <div class="side-box">
                 <h3>Привет</h3>
                 <p align="justify" class="quote">
@@ -66,7 +66,7 @@
                     <li class="last"><a href="/items">Шмотки</a></li>
                 </ul>
             </div>
-        </div>
+        </div>-->
         <div id="content">
             <div class="box">
                 <?php include 'app/views/'.$content_view; ?>
