@@ -61,6 +61,7 @@ class Route
                                 {
                                     $action="action_hero";
                                     //if (empty($id_name))
+                                    $routes[2] = str_replace('_', ' ', $routes[2]);
                                     $id_name=$routes[2];
                                     if(method_exists($controller, $action))
                                         $controller->$action($id_name);

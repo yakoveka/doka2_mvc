@@ -30,27 +30,55 @@
     </div>
     <div id="overviewHeroAbilities">
         <div class="overviewAbilityRow">
+            <div class="abilityIconHolder">
+                <img class="overviewAbilityImg" src="<?php foreach ($data as $row) echo $row['picture_abil1'] ?>">
+            </div>
             <div class="overviewAbilityRowDescription">
                 <h2><?php foreach ($data as $row) echo $row['ability1']; ?></h2>
                 <p><?php foreach ($data as $row) echo $row['descr_abil1']; ?></p>
             </div>
+            <div class="video_of_ability">
+                <iframe src="<?php foreach ($data as $row) echo $row['video_abil1'] ?>"
+                        width="560" height="315" frameborder="0" allowfullscreen></iframe>
+            </div>
         </div>
         <div class="overviewAbilityRow">
+            <div class="abilityIconHolder">
+                <img class="overviewAbilityImg" src="<?php foreach ($data as $row) echo $row['picture_abil2'] ?>">
+            </div>
             <div class="overviewAbilityRowDescription">
                 <h2><?php foreach ($data as $row) echo $row['ability2']; ?></h2>
                 <p><?php foreach ($data as $row) echo $row['descr_abil2']; ?></p>
             </div>
+            <div class="video_of_ability">
+                <iframe src="<?php foreach ($data as $row) echo $row['video_abil2'] ?>"
+                        width="560" height="315" frameborder="0" allowfullscreen></iframe>
+            </div>
         </div>
         <div class="overviewAbilityRow">
+            <div class="abilityIconHolder">
+                <img class="overviewAbilityImg" src="<?php foreach ($data as $row) echo $row['picture_abil3'] ?>">
+            </div>
             <div class="overviewAbilityRowDescription">
                 <h2><?php foreach ($data as $row) echo $row['ability3']; ?></h2>
                 <p><?php foreach ($data as $row) echo $row['descr_abil3']; ?></p>
             </div>
+            <div class="video_of_ability">
+                <iframe src="<?php foreach ($data as $row) echo $row['video_abil3'] ?>"
+                        width="560" height="315" frameborder="0" allowfullscreen></iframe>
+            </div>
         </div>
         <div class="overviewAbilityRow">
+            <div class="abilityIconHolder">
+                <img class="overviewAbilityImg" src="<?php foreach ($data as $row) echo $row['picture_abil4'] ?>">
+            </div>
             <div class="overviewAbilityRowDescription">
                 <h2><?php foreach ($data as $row) echo $row['ability4']; ?></h2>
                 <p><?php foreach ($data as $row) echo $row['descr_abil4']; ?></p>
+            </div>
+            <div class="video_of_ability">
+                <iframe src="<?php foreach ($data as $row) echo $row['video_abil4'] ?>"
+                        width="560" height="315" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
     </div>

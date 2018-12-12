@@ -4,7 +4,7 @@
 }
 
 a {
-    text-decoration: underline;
+    text-decoration: none;
     color: #353535;
 }
 
@@ -74,6 +74,7 @@ ul h4 {
 }
 
 a {
+    text-decoration: none;
     color: #353535;
 }
 
@@ -183,10 +184,14 @@ a {
 }
 
 #menu a {
-    text-transform: uppercase;
-    text-decoration: underline;
-    color: #1C1C1C;
-    font-size: 1.2em;
+    position: relative;
+    top: -20px;
+    text-decoration: none;
+    padding: 10px 10px 8px 10px;
+    color: #0f0f0f;
+    background-color: white;
+    background-size: 10px 8px;
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
 }
 
 #menu a:hover {
@@ -470,30 +475,67 @@ a {
 }
 
 #overviewHeroLeft{
-    width: 270px;
+    position: relative;
+    width: 300px;
+    height: 600px;
 }
 
 #overviewHeroAbilities{
     position: relative;
-    top: -140px;
-    left:400px;
+    top: -600px;
+    left:600px;
     float: left;
     width: 565px;
 }
 
+.overviewAbilityRow
+{
+    position: relative;
+
+    width: 900px;
+    height: 600px;
+}
+
 .overviewAbilityRowDescription{
     position: relative;
-    left:-100px;
+    left:-200px;
     width: 500px;
     float: left;
+    font-size: 12px;
     margin-bottom: 20px;
 }
 .header_name{
     position: relative;
     top:-45px;
+    width:auto;
 }
 
 .selector_main_char{
     position: relative;
     left: 800px;
+}
+
+.abilityIconHolder {
+    position: relative;
+    left: -230px;
+    width: 99px;
+    height: 99px;
+    float: left;
+    margin-right: 4px;
+    margin-bottom:20px;
+}
+
+.overviewAbilityImg {
+
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
+
+.video_of_ability{
+    position: relative;
+    top: auto;
+    left:-200px;
+    height: 350px;
+    width: 500px;
 }

@@ -6,5 +6,6 @@
 <div class="heroes">
 <?php
     foreach ($data as $row)
-    {echo '<a href="/heroes/'.$row['id'].'" class="hero_item">'.$row['name'].'</a>';} ?>
+    { ?> <a href="/heroes/<?php echo $row['name'] = str_replace(' ', '_', $row['name']);?>" class="hero_item"><img src="<?php echo $row['picture'];?>" width="140" height="140" title="<?php echo $row['name']=str_replace('_', ' ', $row['name']);?>"></a>
+    <?php }?>
 </div>

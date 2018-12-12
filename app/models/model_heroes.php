@@ -13,7 +13,7 @@ class Model_Heroes extends Model
     {
         $pdo=$this->connectBD();
 
-        $query = "SELECT * from heroes WHERE id=:id";
+        $query = "SELECT * from heroes WHERE name=:id";
         $cat = $pdo->prepare($query);
         $cat->setFetchMode(PDO::FETCH_CLASS, 'Hero');
         $cat->execute(['id'=>$hero_id]);

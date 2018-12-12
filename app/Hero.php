@@ -1,7 +1,7 @@
 <?php
 class Hero
 {
-    public $id;
+    public $id, $picture, $page_name, $picture_abil1, $picture_abil2, $picture_abil3, $picture_abil4;
     public $name, $main;
     public $intelligence, $agility, $strength, $damage, $movespeed, $armor;
     public $ability1, $ability2, $ability3, $ability4;
