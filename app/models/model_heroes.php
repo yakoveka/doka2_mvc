@@ -44,13 +44,10 @@ class Model_Heroes extends Model
             $cat->setFetchMode(PDO::FETCH_CLASS, 'Hero');
             $cat->execute(['id' => $i]);
             $hero = $cat->fetch();
-            if($hero['main']==$main_char)
-            {
+            if ($hero['main'] == $main_char) {
                 $array[] = $hero;
             }
         }
-
         return $array;
-
     }
 }

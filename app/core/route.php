@@ -47,7 +47,13 @@ class Route
                 }
             case 'heroes':
                 {
-                    if(!empty($routes[2]))
+                    if(!empty($routes[2]) and $routes[2]=='edit')
+                    {
+                        $action = 'action_edit';
+                        if(method_exists($controller, $action))
+                            $controller->$action($routes[3]);
+                    }
+                    elseif(!empty($routes[2]))
                     {
                         switch($routes[2]) {
                             case 'main_characteristic':
@@ -69,24 +75,9 @@ class Route
                                 }
                         }
                     }
-                    else if(method_exists($controller, $action))
+                    elseif(method_exists($controller, $action))
                         $controller->$action();
                     break;
-
-
-                    /*if (!empty($routes[2]) and $routes[2]!='main_characteristic') {
-                        $id_name = $routes[2];
-                    }
-                    $action="action_hero";
-                    if (empty($id_name))
-                    {
-                        $action="action_index";
-                        if (method_exists($controller, $action))
-                            $controller->$action();
-                    }
-                    elseif (method_exists($controller, $action))
-                            $controller->$action($id_name);*/
-
                 }
             case 'login':
                 {
@@ -121,7 +112,7 @@ class Route
                         $user_email = $_POST['email'];
                         $controller->$action($first_name, $last_name, $user_email, $user_login, $user_password);
                     }
-                    if (method_exists($controller, $action))
+                    elseif (method_exists($controller, $action))
                         $controller->$action();
                     break;
                 }

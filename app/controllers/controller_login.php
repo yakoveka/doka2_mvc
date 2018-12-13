@@ -18,8 +18,13 @@ class Controller_Login extends Controller{
         {
             if($row['user_login'] == $user_login and $row['user_password'] == $user_password)
             {
-                header('Location: http://doka2.common/');
+                $_SESSION['role'] = $row['user_role'];
+                $_SESSION['password'] = $row['user_password'];
+                $_SESSION['email'] = $row['user_email'];
+                $_SESSION['first_name'] = $row['first_name'];
+                $_SESSION['last_name'] = $row['last_name'];
                 $_SESSION['login'] = $user_login;
+                header('Location: http://doka2.common/');
             }
             else {
                 $this->view->generate('login_view.php', 'template_view.php', ' Введенный логин или пароль неверен, попробуйте еще раз');

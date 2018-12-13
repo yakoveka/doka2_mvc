@@ -32,10 +32,10 @@
             <li class="login"><a href="/login">Войти</a></li>
             <li class="login"><a href="/register">Зарегистрироваться</a></li>
         </ul>
-        <?php endif; ?>
-        <?php if(!empty($_SESSION['login'])): ?>
+        <?php elseif(!empty($_SESSION['login'])): ?>
         <ul>
-            <li class="login"><a href="/login/logout"><?php echo $_SESSION['login']?></a></li>
+            <li class="login"><a href="/user/<?php echo $_SESSION['login']?>"><?php echo $_SESSION['login']?></a></li>
+            <li class="login"><a href="/login/logout">Выйти</a></li>
         </ul>
         <?php endif; ?>
         <div id="menu">

@@ -539,3 +539,9 @@ a {
     height: 350px;
     width: 500px;
 }
+
+.edit{
+    position: absolute;
+    top: 50px;
+    left: 900px;
+}

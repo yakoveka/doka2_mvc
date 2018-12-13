@@ -23,4 +23,9 @@ class Controller_Heroes extends Controller
         $data = $this->model->get_data_by_main_char($main_char);
         $this->view->generate('main_characteristic_view.php', 'template_view.php', $data);
     }
+
+    function action_edit($hero_name){
+        $data = $this->model->get_data_hero($hero_name);
+        $this->view->generate('edit_hero_view.php', 'template_view.php', $data);
+    }
 }

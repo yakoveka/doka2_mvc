@@ -14,6 +14,16 @@ class Model_Login extends Model
         return $pdo;
     }
 
+    public function get_status($user_login){
+        $pdo=$this->connectBD();
+
+        $query = "select role from users where user_login=:id";
+        $cat=$pdo->prepare($query);
+        $cat->execute(['id'=>$user_login]);
+        $status = $cat->fetch();
+        return $status;
+    }
+
     public function get_user_info($user_login)
     {
         $pdo=$this->connectBD();
