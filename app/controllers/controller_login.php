@@ -24,7 +24,7 @@ class Controller_Login extends Controller{
                 $_SESSION['first_name'] = $row['first_name'];
                 $_SESSION['last_name'] = $row['last_name'];
                 $_SESSION['login'] = $user_login;
-                header('Location: http://doka2.common/');
+                header('Location: /');
             }
             else {
                 $this->view->generate('login_view.php', 'template_view.php', ' Введенный логин или пароль неверен, попробуйте еще раз');
@@ -35,6 +35,6 @@ class Controller_Login extends Controller{
     function action_logout()
     {
         Session::destroy();
-        header('Location: http://doka2.common/');
+        header('Location: /');
     }
 }
