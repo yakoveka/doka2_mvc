@@ -18,12 +18,6 @@ class Model_Register extends Model
     {
         $pdo=$this->connectBD();
 
-        /*$user_login = stripslashes($user_login);
-        $user_login = htmlspecialchars($user_login);
-        $user_password = stripslashes($user_password);
-        $user_password = htmlspecialchars($user_password);
-        $user_login = trim($user_login);
-        $user_password = trim($user_password);*/
         $result = $pdo->prepare("select user_id from users where user_login='$user_login'");
         $result->execute();
         $myrow = $result->fetch();

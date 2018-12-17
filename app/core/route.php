@@ -45,15 +45,16 @@ class Route
                         $controller->$action();
                     break;
                 }
+            case 'user':
+                {
+                    $action = 'action_view';
+                    if(method_exists($controller, $action))
+                        $controller->$action($_SESSION['login']);
+                    break;
+                }
             case 'heroes':
                 {
-                    if(!empty($routes[2]) and $routes[2]=='edit')
-                    {
-                        $action = 'action_edit';
-                        if(method_exists($controller, $action))
-                            $controller->$action($routes[3]);
-                    }
-                    elseif(!empty($routes[2]))
+                    if(!empty($routes[2]))
                     {
                         switch($routes[2]) {
                             case 'main_characteristic':
@@ -63,10 +64,21 @@ class Route
                                         $controller->$action($id_name);
                                     break;
                                 }
+                            case 'edit':
+                                {
+                                    $routes[3] = str_replace('_', ' ', $routes[3]);
+                                    if(!empty($routes[4]) and $routes[4]=='confirm')
+                                    {
+                                        $action='action_confirm_edit';
+                                        $controller->$action($routes[3]);
+                                    }
+                                    elseif(method_exists($controller, $action))
+                                        $controller->$action($routes[3]);
+                                    break;
+                                }
                             default:
                                 {
                                     $action="action_hero";
-                                    //if (empty($id_name))
                                     $routes[2] = str_replace('_', ' ', $routes[2]);
                                     $id_name=$routes[2];
                                     if(method_exists($controller, $action))

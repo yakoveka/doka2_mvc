@@ -82,9 +82,9 @@
             </div>
         </div>
     </div>
-    <?php if($_SESSION['role']=='admin' or $_SESSION['role'] == 'moder'): ?>
-    <form class="edit" action="/heroes/edit/<?php echo $row['name']; ?>" method="post">
-        <button  type="submit_login">Редактировать</button>
+    <?php if(!empty($_SESSION['role']) and ($_SESSION['role']=='admin' or $_SESSION['role'] == 'moder')): ?>
+    <form class="edit" action="/heroes/edit/<?php $row['name'] = str_replace(' ', '_', $row['name']); echo $row['name']; ?>" method="post">
+        <button  type="submit">Редактировать</button>
     </form>
     <?php endif; }?>
 </div>
