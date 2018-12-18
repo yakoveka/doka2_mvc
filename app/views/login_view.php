@@ -3,5 +3,5 @@
 <form class="form-signin" action="/login/check" method="post">
     <input type="text" name="login" id="login" placeholder="Логин" required>
     <input type="password" name="password"  placeholder="Пароль" required>
-    <button  type="submit_login">Войти</button>
+    <button  type="submit">Войти</button>
 </form>

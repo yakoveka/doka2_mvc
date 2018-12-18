@@ -13,20 +13,24 @@ class Controller_Login extends Controller{
 
     function action_check($user_login, $user_password)
     {
+        /*header('Location: /login');*/
+
+
         $data = $this->model->get_user_info($user_login);
         foreach ($data as $row)
         {
-            if($row['user_login'] == $user_login and $row['user_password'] == $user_password)
+            if($row->user_login == $user_login and $row->user_password == $user_password)
             {
-                $_SESSION['role'] = $row['user_role'];
-                $_SESSION['password'] = $row['user_password'];
-                $_SESSION['email'] = $row['user_email'];
-                $_SESSION['first_name'] = $row['first_name'];
-                $_SESSION['last_name'] = $row['last_name'];
+                $_SESSION['role'] = $row->user_role;
+                $_SESSION['password'] = $row->user_password;
+                $_SESSION['email'] = $row->user_email;
+                $_SESSION['first_name'] = $row->first_name;
+                $_SESSION['last_name'] = $row->last_name;
                 $_SESSION['login'] = $user_login;
                 header('Location: /');
             }
             else {
+                //$_SERVER['REDIRECT_URL'] = '/login/';
                 $this->view->generate('login_view.php', 'template_view.php', ' Введенный логин или пароль неверен, попробуйте еще раз');
             }
         }

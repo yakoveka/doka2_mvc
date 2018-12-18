@@ -10,26 +10,26 @@ class Controller_Heroes extends Controller
 
     function action_hero($hero_id)
     {
-        $data = $this->model->get_data_hero($hero_id);
-        $this->view->generate('hero_view.php', 'template_view.php', $data);
+        $hero = $this->model->get_hero($hero_id);
+        $this->view->generate('hero_view.php', 'template_view.php', array("hero" => $hero));
     }
 
     function action_index()
     {
-        $data = $this->model->get_Heroes();
-        $this->view->generate('heroes_view.php', 'template_view.php', $data);
+        $data = $this->model->get_heroes();
+        $this->view->generate('heroes_view.php', 'template_view.php', array("data" => $data));
     }
 
     function action_main_characteristic($main_char)
     {
-        $data = $this->model->get_data_by_main_char($main_char);
+        $data = $this->model->get_heroes_by_main_characteristic($main_char);
         $this->view->generate('main_characteristic_view.php', 'template_view.php', $data);
     }
 
     function action_edit($hero_name)
     {
         $hero_name=str_replace('_', ' ', $hero_name);
-        $data = $this->model->get_data_hero($hero_name);
+        $data = $this->model->get_hero($hero_name);
         $this->view->generate('edit_hero_view.php', 'template_view.php', $data);
     }
 
@@ -63,7 +63,7 @@ class Controller_Heroes extends Controller
         $array['video_abil3'] = $_POST['hero_video_abil3'];
         $array['video_abil4'] = $_POST['hero_video_abil4'];
         $data=$this->model->update_hero($array);
-        //$this->view->generate('draft.php', 'template_view.php', $data);
+        //$this->view->generate('draft.php', 'temp;late_view.php', $data);
         header('Location: /heroes');
     }
 }

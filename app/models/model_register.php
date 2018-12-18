@@ -9,7 +9,7 @@ class Model_Register extends Model
 
     public function connectBD()
     {
-        $databaseConnection = new DatabaseConnect('root');
+        $databaseConnection = new connection('root');
         $pdo = $databaseConnection->getPdo();
         return $pdo;
     }
