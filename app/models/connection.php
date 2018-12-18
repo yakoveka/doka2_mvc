@@ -1,5 +1,5 @@
 <?php
-class DatabaseConnect {
+class connection {
     private $pdo = null;
     public function getPdo(){
         return $this->pdo;

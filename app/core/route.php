@@ -9,6 +9,7 @@ class Route
 
         $routes = explode('/', $_SERVER['REQUEST_URI']);
 
+
         if (!empty($routes[1])) {
             $controller_name = $routes[1];
         }
@@ -132,10 +133,12 @@ class Route
                 Route::ErrorPage404();
 
         }
+
+
     }
     function ErrorPage404()
     {
-        $host = 'http://' . $_SERVER['HTTP_HOST'] . '/';
+        $host = 'http://'.$_SERVER['HTTP_HOST'].'/';
         header('HTTP/1.1 404 Not Found');
         header("Status: 404 Not Found");
         header('Location:' . $host . '404');

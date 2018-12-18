@@ -2,8 +2,11 @@
 
 class View
 {
-    function generate($content_view, $template_view, $data = null)
+    function generate($content_view, $template_view, $parameters = null)
     {
-        include 'app/views/'.$template_view;
+        if (!empty($parameters)) {
+            extract($parameters);
+        }
+        include 'app/views/' . $template_view;
     }
 }
