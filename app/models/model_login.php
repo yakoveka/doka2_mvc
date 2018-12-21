@@ -17,7 +17,7 @@ class Model_Login extends Model
     public function get_status($user_login){
         $pdo=$this->connectBD();
 
-        $query = "select role from users where user_login=:id";
+        $query = "select role from users where login=:id";
         $cat=$pdo->prepare($query);
         $cat->execute(['id'=>$user_login]);
         $status = $cat->fetch();
@@ -28,7 +28,7 @@ class Model_Login extends Model
     {
         $pdo=$this->connectBD();
 
-        $query = "SELECT * from users WHERE user_login=:id";
+        $query = "SELECT * from users WHERE login=:id";
         $cat = $pdo->prepare($query);
         $cat->setFetchMode(PDO::FETCH_CLASS, 'User');
         $cat->execute(['id'=>$user_login]);

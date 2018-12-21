@@ -10,6 +10,6 @@ class Controller_User extends Controller
     function action_view($login)
     {
         $data = $this->model->get_User($login);
-        $this->view->generate('user_view.php', 'template_view.php', $data);
+        $this->view->generate('user_view.php', 'template_view.php', array("data" => $data));
     }
 }

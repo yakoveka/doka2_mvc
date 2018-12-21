@@ -13,6 +13,5 @@ class connection {
                 echo "Error";
             }
         }
-
     }
 }

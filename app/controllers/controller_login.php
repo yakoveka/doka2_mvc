@@ -8,7 +8,7 @@ class Controller_Login extends Controller{
     }
 
     function action_index(){
-        $this->view->generate('login_view.php', 'template_view.php', null);
+        $this->view->generate('login_view.php', 'template_view.php', array("data" => null));
     }
 
     function action_check($user_login, $user_password)
@@ -19,19 +19,19 @@ class Controller_Login extends Controller{
         $data = $this->model->get_user_info($user_login);
         foreach ($data as $row)
         {
-            if($row->user_login == $user_login and $row->user_password == $user_password)
+            if($row->login == $user_login and $row->password == $user_password)
             {
-                $_SESSION['role'] = $row->user_role;
-                $_SESSION['password'] = $row->user_password;
-                $_SESSION['email'] = $row->user_email;
+                $_SESSION['role'] = $row->role;
+                $_SESSION['password'] = $row->password;
+                $_SESSION['email'] = $row->email;
                 $_SESSION['first_name'] = $row->first_name;
                 $_SESSION['last_name'] = $row->last_name;
-                $_SESSION['login'] = $user_login;
+                $_SESSION['login'] = $row->login;
                 header('Location: /');
             }
             else {
                 //$_SERVER['REDIRECT_URL'] = '/login/';
-                $this->view->generate('login_view.php', 'template_view.php', ' Введенный логин или пароль неверен, попробуйте еще раз');
+                $this->view->generate('login_view.php', 'template_view.php', array("data"=>' Введенный логин или пароль неверен, попробуйте еще раз'));
             }
         }
     }

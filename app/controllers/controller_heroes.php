@@ -23,20 +23,29 @@ class Controller_Heroes extends Controller
     function action_main_characteristic($main_char)
     {
         $data = $this->model->get_heroes_by_main_characteristic($main_char);
-        $this->view->generate('main_characteristic_view.php', 'template_view.php', $data);
+        $this->view->generate('main_characteristic_view.php', 'template_view.php', array("data" => $data));
     }
 
     function action_edit($hero_name)
     {
         $hero_name=str_replace('_', ' ', $hero_name);
         $data = $this->model->get_hero($hero_name);
-        $this->view->generate('edit_hero_view.php', 'template_view.php', $data);
+        $this->view->generate('edit_hero_view.php', 'template_view.php', array("data" => $data));
     }
 
     function action_confirm_edit($hero_name)
     {
         $hero_name = str_replace('_', ' ', $hero_name);
-        $array['hero_name'] = $hero_name;
+        $hero=new Hero();
+        $hero->name=$_POST['hero_name'];
+        $hero->strength=$_POST['heroStrength'];
+        $hero->agility=$_POST['heroAgility'];
+        $hero->mainAbility=$_POST['heroMainAbility'];
+        $hero->intelligence=$_POST['heroIntelligence'];
+        $hero->damage=$_POST['heroDamage'];
+        $hero->movespeed=$_POST['heroMovespeed'];
+        $hero->armor=$_POST['heroArmor'];
+        /*$array['heroName'] = $hero_name;
         $array['name'] = $_POST['hero_name'];
         $array['main'] = $_POST['hero_main'];
         $array['intelligence'] = $_POST['hero_intelligence'];
@@ -61,7 +70,7 @@ class Controller_Heroes extends Controller
         $array['video_abil1'] = $_POST['hero_video_abil1'];
         $array['video_abil2'] = $_POST['hero_video_abil2'];
         $array['video_abil3'] = $_POST['hero_video_abil3'];
-        $array['video_abil4'] = $_POST['hero_video_abil4'];
+        $array['video_abil4'] = $_POST['hero_video_abil4'];*/
         $data=$this->model->update_hero($array);
         //$this->view->generate('draft.php', 'temp;late_view.php', $data);
         header('Location: /heroes');

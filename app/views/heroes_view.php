@@ -15,9 +15,9 @@
         <option title="переход на силу" value="/heroes/main_characteristic/Strength">Сила</option>
     </select>
 </form>
+
 <div class="heroes">
-    <?php
-    foreach ($data as $row) { ?>
-    <a href="/heroes/<?php echo $row->name = str_replace(' ', '_', $row->name);?>" class="hero_item"><img src="<?php echo $row->picture_url;?>" width="140" height="140" title="<?php echo $row->name=str_replace('_', ' ', $row->name);?>"></a>
-    <?php } ?>
+    <?php foreach ($data as $hero): ?>
+    <a href="/heroes/<?php echo str_replace(' ', '_', $hero->name);?>" class="hero_item"><img src="<?php echo $hero->picture_url;?>" width="140" height="140" title="<?php echo str_replace('_', ' ', $hero->name);?>"></a>
+    <?php endforeach; ?>
 </div>
