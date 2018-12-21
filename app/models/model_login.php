@@ -33,6 +33,6 @@ class Model_Login extends Model
         $cat->setFetchMode(PDO::FETCH_CLASS, 'User');
         $cat->execute(['id'=>$user_login]);
         $user=$cat->fetch();
-        return array($user);
+        return $user;
     }
 }

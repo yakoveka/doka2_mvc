@@ -35,9 +35,9 @@ class Controller_Heroes extends Controller
 
     function action_confirm_edit($hero_name)
     {
-        $hero_name = str_replace('_', ' ', $hero_name);
+        //$hero_name = str_replace('_', ' ', $hero_name);
         $hero=new Hero();
-        $hero->name=$_POST['hero_name'];
+        $hero->name=$_POST['heroName'];
         $hero->strength=$_POST['heroStrength'];
         $hero->agility=$_POST['heroAgility'];
         $hero->mainAbility=$_POST['heroMainAbility'];
@@ -45,6 +45,18 @@ class Controller_Heroes extends Controller
         $hero->damage=$_POST['heroDamage'];
         $hero->movespeed=$_POST['heroMovespeed'];
         $hero->armor=$_POST['heroArmor'];
+        $hero->picture_url=$_POST['heroPicture'];
+
+        for($i=1;$i<5;$i++)
+        {
+                $ability = new Ability();
+                $ability->name=$_POST['heroAbility'.$i];
+                $ability->description=$_POST['heroDescriptionOfAbility'.$i];
+                $ability->picture_url=$_POST['heroPictureOfAbility1'.$i];
+                $ability->video_url=$_POST['heroVideoOfAbility'.$i];
+                $hero->abilities[] = $ability;
+
+        }
         /*$array['heroName'] = $hero_name;
         $array['name'] = $_POST['hero_name'];
         $array['main'] = $_POST['hero_main'];
@@ -71,7 +83,7 @@ class Controller_Heroes extends Controller
         $array['video_abil2'] = $_POST['hero_video_abil2'];
         $array['video_abil3'] = $_POST['hero_video_abil3'];
         $array['video_abil4'] = $_POST['hero_video_abil4'];*/
-        $data=$this->model->update_hero($array);
+        $data=$this->model->update_hero($hero);
         //$this->view->generate('draft.php', 'temp;late_view.php', $data);
         header('Location: /heroes');
     }
