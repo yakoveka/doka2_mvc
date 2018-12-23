@@ -1,8 +1,3 @@
-<?php if(empty($_SESSION['login']) or $_SESSION['role'] == "default")
-{
-    header("Location: /");
-    die();
-}?>
 <form action="/heroes/edit/<?php echo str_replace(' ', '_', $data->name); ?>/confirm" class="edit_hero" method="post">
     Имя: <input type="text" name="heroName" value="<?php echo $data->name; ?>"><br/>
     Главная характеристика: <input type="text" name="heroMainAbility" value="<?= $data->mainAbility; ?>"><br/>

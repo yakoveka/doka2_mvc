@@ -25,6 +25,7 @@ class Controller_Login extends Controller{
                 $_SESSION['first_name'] = $data->first_name;
                 $_SESSION['last_name'] = $data->last_name;
                 $_SESSION['login'] = $data->login;
+                $_SESSION['activated']=$data->activated;
                 header('Location: /');
             }
             else {

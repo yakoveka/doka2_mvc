@@ -1,11 +1,12 @@
-<h1><?php echo $_SESSION['login']; ?></h1>
+<h1><?php echo $_SESSION['login']; foreach ($data as $row): ?></h1>
 <p>
-    Ник: <?php foreach ($data as $row){ echo $row->login; ?>
+    Ник: <?= $row->login?>
 </p>
 <p>
-    Имя: <?php echo $row->first_name;?><br/>
-    Фамилия: <?php echo $row->last_name;?><br/>
-    Email: <?php echo $row->email;?><br/>
-    <?php if($row->role=='admin' or $row->user=='moder'): ?>
-    Роль: <?php echo $row->role;endif;}?><br/>
+    Имя: <?=$row->first_name?><br/>
+    Фамилия: <?=$row->last_name?><br/>
+    Email: <?=$row->email?><br/>
+    <?php if($row->role=='admin' or $row->role=='moder'): ?>
+    Роль: <?=$row->role;endif;?><br/>
 </p>
+<?php endforeach;?>

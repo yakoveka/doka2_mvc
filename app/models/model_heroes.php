@@ -20,7 +20,6 @@ class Model_Heroes extends Model
         $cat->execute(['id' => $hero_name]);
         $hero = $cat->fetch();
 
-        //need to do everything and very fast
         //get all abilities of hero, put it into $abilities
         $query="select * from abilities where hero_id=:h_id";
         $cat=$pdo->prepare($query);

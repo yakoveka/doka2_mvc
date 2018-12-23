@@ -7,7 +7,7 @@
         <input type="text" name="login" id="login" placeholder="Логин" required>
         <input type="text" name="email"  placeholder="Почта" required>
         <input type="password" name="password"  placeholder="Пароль" required>
-        <button  type="submit_login">Зарегистрироваться</button>
+        <button  type="submit">Зарегистрироваться</button>
     </form>
     <p><?php else: echo $data; ?></p>
 <form class="form-signin" action="/register/writeUser" method="post">
@@ -16,6 +16,6 @@
     <input type="text" name="login" id="login" placeholder="Логин" required>
     <input type="text" name="email"  placeholder="Почта" required>
     <input type="password" name="password"  placeholder="Пароль" required>
-    <button  type="submit_login">Зарегистрироваться</button>
+    <button  type="submit">Зарегистрироваться</button>
 </form>
 <?php endif; ?>

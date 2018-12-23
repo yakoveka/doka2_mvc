@@ -20,4 +20,20 @@ class Model_User extends Model{
         $user=$cat->fetch();
         return array($user);
     }
+
+    public function check_registration($token, $email){
+        $pdo=$this->connectBD();
+
+        $query = "select token from users where email='$email'";
+        $cat = $pdo->prepare($query);
+        $cat->execute();
+        $tableToken = $cat->fetch();
+        if($tableToken['token']==$token){
+            $query="update users set activated=:a, token=:t";
+            $cat=$pdo->prepare($query);
+            $cat->execute(['a'=>1, 't'=>'0']);
+            return true;
+        }
+        return false;
+    }
 }
