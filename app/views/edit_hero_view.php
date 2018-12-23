@@ -14,6 +14,7 @@
     Броня: <input type="text" name="heroArmor" value="<?= $data->armor; ?>"><br/>
     Картинка героя: <input type="text" name="heroPicture" value="<?=$data->picture_url; ?>"><br/>
     <?php $i=1; foreach ($data->abilities as $ability): ?>
+            <input type="hidden" name="abilityId<?=$i?>" value="<?= $ability->id?>">
             Способность <?= $i ?>: <input type="text" name="heroAbility<?= $i ?>" value="<?= $ability->name ?>"><br/>
             Описание способности <?=$i?>: <textarea name="heroDescriptionOfAbility<?=$i?>" cols="100" rows="6"><?=$ability->description?></textarea><br/>
             Картинка способности <?=$i?>: <input type="text" name="heroPictureOfAbility1<?=$i?>" value="<?=$ability->picture_url?>"><br/>

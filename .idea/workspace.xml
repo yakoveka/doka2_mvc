@@ -2,48 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="613e7888-8678-40f9-9810-351e7bc24bd3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_12_2018_2_03__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_12_2018_2_03__Default_Changelist_.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_12_2018_2_03__Default_Changelist_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_06_12_2018_2_03__Default_Changelist_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_12_2018_22_48__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_12_2018_22_48__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Ability.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Ability.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Hero.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Hero.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Session.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Session.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/bootstrap.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/controller_404.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/controller_404.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/controller_heroes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/controller_heroes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/controller_items.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/controller_items.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/controller_login.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/controller_login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/controller_main.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/controller_main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/controller_posts.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/controller_posts.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/controller_register.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/controller_register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/controller_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/controller_user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/controller.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/controller.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/model.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/model.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/route.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/route.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/core/view.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/core/view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/connection.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/model_heroes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/model_heroes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/model_login.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/model_login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/model_register.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/model_register.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/model_user.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/model_user.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/404_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/404_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/draft.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/draft.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/edit_hero_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/edit_hero_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/hero_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/hero_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/heroes_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/heroes_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/items_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/items_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/login_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/login_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/main_characteristic_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/main_characteristic_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/main_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/main_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/posts_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/posts_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/register_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/register_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/template_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/template_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/user_view.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/user_view.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/404.png" beforeDir="false" afterPath="$PROJECT_DIR$/images/404.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/header_logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/images/header_logo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <ignored path="C:\doka2_mvc\.idea\shelf/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -52,40 +19,69 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="201153506">
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="php" value="218" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PHP" value="218" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="php" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="PHP" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.30" value="1" />
+          <entry key="project.open.time.47" value="1" />
+          <entry key="project.opened" value="3" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/controller_heroes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="705">
-              <caret line="47" column="49" lean-forward="true" selection-start-line="47" selection-start-column="49" selection-end-line="47" selection-end-column="49" />
+            <state relative-caret-position="935">
+              <caret line="55" column="50" selection-start-line="55" selection-start-column="50" selection-end-line="55" selection-end-column="50" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/model_heroes.php">
+        <entry file="file://$PROJECT_DIR$/app/Hero.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="75" column="45" lean-forward="true" selection-start-line="75" selection-start-column="45" selection-end-line="75" selection-end-column="45" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/core/route.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="41" column="20" lean-forward="true" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Ability.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="17" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+            <state relative-caret-position="119">
+              <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -93,35 +89,35 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/edit_hero_view.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+            <state relative-caret-position="272">
+              <caret line="16" column="55" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/models/model_heroes.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/hero_view.php">
+        <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-55">
-              <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models/model_register.php">
+        <entry file="file://$PROJECT_DIR$/app/Ability.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="23" selection-start-line="19" selection-start-column="23" selection-end-line="19" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/controller_login.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="28" column="13" lean-forward="true" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
+            <state relative-caret-position="102">
+              <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -195,7 +191,6 @@
         <option value="$PROJECT_DIR$/app/models/connection.php" />
         <option value="$PROJECT_DIR$/app/models/model_user.php" />
         <option value="$PROJECT_DIR$/app/views/user_view.php" />
-        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/app/Ability.php" />
         <option value="$PROJECT_DIR$/app/core/view.php" />
         <option value="$PROJECT_DIR$/app/views/hero_view.php" />
@@ -210,13 +205,21 @@
         <option value="$PROJECT_DIR$/app/controllers/controller_login.php" />
         <option value="$PROJECT_DIR$/app/controllers/controller_register.php" />
         <option value="$PROJECT_DIR$/app/views/register_view.php" />
+        <option value="$PROJECT_DIR$/app/core/route.php" />
+        <option value="$PROJECT_DIR$/index.php" />
         <option value="$PROJECT_DIR$/app/views/edit_hero_view.php" />
         <option value="$PROJECT_DIR$/app/controllers/controller_heroes.php" />
         <option value="$PROJECT_DIR$/app/models/model_heroes.php" />
-        <option value="$PROJECT_DIR$/app/core/route.php" />
       </list>
     </option>
   </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="PhpDebugGeneral" xdebug_debug_port="9003" />
   <component name="PhpServers">
     <servers>
       <server host="doka2.common" id="12e4219f-0b93-47da-9341-11be6511a42f" name="doka2.common" use_path_mappings="true">
@@ -226,7 +229,7 @@
       </server>
       <server host="doka2.commonn" id="40d8a87e-843a-4f30-bca4-c944962b26b7" name="doka2.commonn" use_path_mappings="true">
         <path_mappings>
-          <mapping local-root="$PROJECT_DIR$" remote-root="/var/www/doka2.mvc" />
+          <mapping local-root="$PROJECT_DIR$" remote-root="/home/vagrant/movement" />
         </path_mappings>
       </server>
       <server host="vagrant.doka2.common" id="e6db9d69-a219-4e1b-aedd-2c8cbb8f9bcf" name="vagrant.doka2.common" use_path_mappings="true">
@@ -234,23 +237,26 @@
           <mapping local-root="$PROJECT_DIR$" remote-root="/var/www/doka2.mvc" />
         </path_mappings>
       </server>
+      <server host="doka2.commonn" id="3ce44810-5d5c-41c3-91b5-7793017a6bfe" name="wi-backend" use_path_mappings="true">
+        <path_mappings>
+          <mapping local-root="$PROJECT_DIR$" remote-root="/home/vagrant/movement" />
+        </path_mappings>
+      </server>
     </servers>
   </component>
+  <component name="PhpWebServerValidation" deployment_server_id="866f1575-40a3-480e-9f03-9695adfc1e76" path_to_validation_script="C:\doka2_mvc" selected_validation_type="REMOTE" web_path_to_validation_script="http://127.0.0.1/" />
+  <component name="PhpXdebugProxy" ide_key="wi-backend" host="192.168.33.10" port="9003" />
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="67" />
-    <option name="y" value="25" />
-    <option name="width" value="1853" />
-    <option name="height" value="1055" />
+    <option name="x" value="-9" />
+    <option name="width" value="978" />
+    <option name="height" value="1050" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -292,24 +298,25 @@
               <item name="doka2_mvc" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="doka2_mvc" type="b2602c69:ProjectViewProjectNode" />
-              <item name="doka2_mvc" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/laravel-5.6.12" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -347,21 +354,25 @@
       <workItem from="1545122017586" duration="15490000" />
       <workItem from="1545244857369" duration="1119000" />
       <workItem from="1545291861269" duration="3364000" />
+      <workItem from="1545483233130" duration="2730000" />
+      <workItem from="1545485993311" duration="1984000" />
+      <workItem from="1545509462906" duration="139000" />
+      <workItem from="1545540944443" duration="1293000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="137661000" />
+    <option name="totallyTimeSpent" value="143775000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.128943" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1590604" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4982974" weight="0.43088552" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.4982974" visible="true" weight="0.15944056" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -374,8 +385,8 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Remote Host" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="Remote Host" order="3" weight="0.3295302" />
+      <window_info anchor="right" id="Database" order="4" weight="0.3295302" />
       <window_info anchor="right" id="Structure" order="5" weight="0.24971624" />
     </layout>
     <layout-to-restore>
@@ -405,16 +416,8 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/app/models/model_heroes.php</url>
-          <line>60</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -577,13 +580,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="32" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/404_view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -667,24 +663,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Hero.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/hero_view.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-55">
           <caret line="24" column="28" selection-start-line="24" selection-start-column="28" selection-end-line="24" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Ability.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="17" lean-forward="true" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -709,31 +691,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/model_heroes.php">
+    <entry file="file://$PROJECT_DIR$/app/core/route.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="75" column="45" lean-forward="true" selection-start-line="75" selection-start-column="45" selection-end-line="75" selection-end-column="45" />
+        <state relative-caret-position="270">
+          <caret line="41" column="20" lean-forward="true" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Ability.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/controller_heroes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="47" column="49" lean-forward="true" selection-start-line="47" selection-start-column="49" selection-end-line="47" selection-end-column="49" />
+        <state relative-caret-position="935">
+          <caret line="55" column="50" selection-start-line="55" selection-start-column="50" selection-end-line="55" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Hero.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/edit_hero_view.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="3" lean-forward="true" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
+        <state relative-caret-position="272">
+          <caret line="16" column="55" selection-start-line="16" selection-start-column="55" selection-end-line="16" selection-end-column="55" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/core/route.php">
+    <entry file="file://$PROJECT_DIR$/app/models/model_heroes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="41" column="20" lean-forward="true" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
+        <state relative-caret-position="357">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
         </state>
       </provider>
     </entry>

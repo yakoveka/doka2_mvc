@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="866f1575-40a3-480e-9f03-9695adfc1e76" name="vagrant" url="http://doka2.commonn">
+        <fileTransfer host="192.168.33.10" port="22" privateKey="C:\vagrant_mvc\.vagrant\machines\default\virtualbox\private_key" rootFolder="/home/vagrant/movement" accessType="SFTP" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" shareSSLContext="true" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

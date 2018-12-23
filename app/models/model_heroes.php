@@ -12,7 +12,7 @@ class Model_Heroes extends Model
 
     public function get_hero($hero_name)
     {
-        //достал характеристики героя, положил в hero
+        //get all characteristics of hero, put it into $hero
         $pdo = $this->connectBD();
         $query = "SELECT * from heroes WHERE name=:id";
         $cat = $pdo->prepare($query);
@@ -20,8 +20,7 @@ class Model_Heroes extends Model
         $cat->execute(['id' => $hero_name]);
         $hero = $cat->fetch();
 
-
-        //достал все способности героя, положил в abilities
+        //get all abilities of hero, put it into $abilities
         $query="select * from abilities where hero_id=:h_id";
         $cat=$pdo->prepare($query);
         $cat->setFetchMode(PDO::FETCH_CLASS, 'Ability');
@@ -60,18 +59,15 @@ class Model_Heroes extends Model
         $query="select id from heroes where name=:h";
         $cat=$pdo->prepare($query);
         $cat->execute(['h'=>$routes[3]]);
-        $id=$cat->fetch();
         try {
             $query = "update heroes set name=:n, mainAbility=:m, intelligence=:i, agility=:a, strength=:s, damage=:d, movespeed=:move, armor=:ar where name=:old";
             $cat = $pdo->prepare($query);
             $cat->execute(['old' => $routes[3], 'n' => $hero->name, 'm' => $hero->mainAbility, 'i' => $hero->intelligence, 'a' => $hero->agility, 's' => $hero->strength, 'd' => $hero->damage, 'move' => $hero->movespeed, 'ar' => $hero->armor]);
-            $i=1;
             foreach ($hero->abilities as $ability)
             {
-                $query="update abilities set name=:n, description=:d, picture_url=:p, video_url=:v where hero_id =:i";
+                $query="update abilities set name=:n, description=:d, picture_url=:p, video_url=:v where id =:i";
                 $cat = $pdo->prepare($query);
-                $cat->execute(['n'=>$ability->name, 'd'=>$ability->description, 'p'=>$ability->picture_url, 'v'=>$ability->video_url, 'i'=>$id['id']]);
-                $i+=1;
+                $cat->execute(['n'=>$ability->name, 'd'=>$ability->description, 'p'=>$ability->picture_url, 'v'=>$ability->video_url, 'i'=>$ability->id]);
             }
             return 'Данные изменены успешно';
         }catch (PDOException $e) {
