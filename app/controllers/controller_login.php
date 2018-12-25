@@ -13,8 +13,6 @@ class Controller_Login extends Controller{
 
     function action_check($user_login, $user_password)
     {
-
-
         $user_password=md5($user_password);
         $data = $this->model->get_user_info($user_login);
             if($data->login == $user_login and $data->password == $user_password)

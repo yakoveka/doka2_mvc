@@ -58,7 +58,7 @@ class Controller_Heroes extends Controller
 
         }
         $data=$this->model->update_hero($hero);
-        //$this->view->generate('draft.php', 'temp;late_view.php', $data);
+        //$this->view->generate('draft_view.php', 'temp;late_view.php', $data);
         header('Location: /heroes');
     }
 }

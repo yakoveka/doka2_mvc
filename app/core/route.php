@@ -9,7 +9,6 @@ class Route
         $url=parse_url($_SERVER['REQUEST_URI']);
         $routes = explode('/', $url['path']);
 
-
         if (!empty($routes[1])) {
             $controller_name = $routes[1];
         }
@@ -38,6 +37,8 @@ class Route
 
         $controller = new $controller_name;
         $action = $action_name;
+
+
         switch ($routes[1]) {
             case "":
                 {
@@ -66,6 +67,52 @@ class Route
                                 $controller->$action($token, $email);
                                 break;
                             }
+                        case 'forgot':
+                            {
+                                if(!empty($_POST['forgot_email'])) {
+                                    $forgot = $_POST['forgot_email'];
+                                    $controller->$action($forgot);
+                                    break;
+                                }
+                                else
+                                {
+                                    $action='action_forgot_view';
+                                    $controller->$action();
+                                    break;
+                                }
+
+                            }
+                        case 'forgotConfirm':
+                            {
+                                if (isset($_GET['token']) and !empty($_GET['token'])) {
+                                    $token = $_GET['token'];
+                                } else {
+                                    header("Location: /");
+                                    break;
+                                }
+
+                                if (isset($_GET['email']) and !empty($_GET['email'])) {
+                                    $email = $_GET['email'];
+                                } else {
+                                    header("Location: /");
+                                    break;
+                                }
+                                $controller->$action($token, $email);
+                                break;
+                            }
+                        case 'changePassword':
+                            {
+                                if($_POST['new_password'] != $_POST['repeat_new_password'])
+                                {
+                                    $flag=false;
+                                    $controller->$action($flag, $flag);
+                                    break;
+                                }
+                                $password=$_POST['new_password'];
+                                $email=$_POST['email'];
+                                $controller->$action($password, $email);
+                                break;
+                            }
                         default:
                             {
                                 $action = 'action_view';
@@ -74,6 +121,7 @@ class Route
                                 break;
                             }
                     }
+                    break;
                 }
             case 'heroes':
                 {
@@ -87,7 +135,7 @@ class Route
                                     break;
                                 }
                             case 'edit':
-                                if (!empty($_SESSION['login']) and /*($_SESSION['role'] == "admin" or $_SESSION['role'] == "moder")*/ $_SESSION['activated']=="1")
+                                if (!empty($_SESSION['login']) and  $_SESSION['activated']=="1")
                                 {
                                     $routes[3] = str_replace('_', ' ', $routes[3]);
                                     if (!empty($routes[4]) and $routes[4] == 'confirm') {
@@ -95,6 +143,7 @@ class Route
                                         $controller->$action($routes[3]);
                                     } elseif (method_exists($controller, $action))
                                         $controller->$action($routes[3]);
+                                    break;
                                 }
                                 else
                                     header("Location: /");
