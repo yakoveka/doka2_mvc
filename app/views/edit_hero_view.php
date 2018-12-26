@@ -1,4 +1,5 @@
 <form action="/heroes/edit/<?php echo str_replace(' ', '_', $data->name); ?>/confirm" class="edit_hero" method="post">
+    <input type="hidden" name="heroId" value="<?=$data->id?>">
     Имя: <input type="text" name="heroName" value="<?php echo $data->name; ?>"><br/>
     Главная характеристика: <input type="text" name="heroMainAbility" value="<?= $data->mainAbility; ?>"><br/>
     Интеллект: <input type="text" name="heroIntelligence" value="<?= $data->intelligence; ?>"><br/>
@@ -14,6 +15,7 @@
             Описание способности <?=$i?>: <textarea name="heroDescriptionOfAbility<?=$i?>" cols="100" rows="6"><?=$ability->description?></textarea><br/>
             Картинка способности <?=$i?>: <input type="text" name="heroPictureOfAbility1<?=$i?>" value="<?=$ability->picture_url?>"><br/>
             Видео способности <?=$i?>: <input type="text" name="heroVideoOfAbility<?=$i?>" value="<?php echo $ability->video_url; $i+=1?>"><br/>
+
     <?php endforeach; ?>
     <input type="submit" value="Принять">
 </form>
