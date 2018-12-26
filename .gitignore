@@ -1,2 +1,2 @@
-#ignore .idea of phpstorm
-./idea
+#ignoring files of phpstorm
+.idea/

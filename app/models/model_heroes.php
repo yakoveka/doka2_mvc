@@ -44,7 +44,7 @@ class Model_Heroes extends Model
     public function get_heroes_by_main_characteristic($main_char)
     {
         $pdo = $this->connectBD();
-        $query = "SELECT * from heroes WHERE main=:id";
+        $query = "SELECT * from heroes WHERE mainAbility=:id";
         $cat = $pdo->prepare($query);
         $cat->setFetchMode(PDO::FETCH_CLASS, 'Hero');
         $cat->execute(['id' => $main_char]);
@@ -56,13 +56,10 @@ class Model_Heroes extends Model
     {
         $routes = explode('/', $_SERVER['REQUEST_URI']);
         $pdo = $this->connectBD();
-        $query="select id from heroes where name=:h";
-        $cat=$pdo->prepare($query);
-        $cat->execute(['h'=>$routes[3]]);
         try {
-            $query = "update heroes set name=:n, mainAbility=:m, intelligence=:i, agility=:a, strength=:s, damage=:d, movespeed=:move, armor=:ar where name=:old";
+            $query = "update heroes set name=:n, mainAbility=:m, intelligence=:i, agility=:a, strength=:s, damage=:d, movespeed=:move, armor=:ar, picture_url=:p where id=:old";
             $cat = $pdo->prepare($query);
-            $cat->execute(['old' => $routes[3], 'n' => $hero->name, 'm' => $hero->mainAbility, 'i' => $hero->intelligence, 'a' => $hero->agility, 's' => $hero->strength, 'd' => $hero->damage, 'move' => $hero->movespeed, 'ar' => $hero->armor]);
+            $cat->execute(['old' => $hero->id, 'n' => $hero->name, 'm' => $hero->mainAbility, 'i' => $hero->intelligence, 'a' => $hero->agility, 's' => $hero->strength, 'd' => $hero->damage, 'move' => $hero->movespeed, 'ar' => $hero->armor, "p"=>$hero->picture_url]);
             foreach ($hero->abilities as $ability)
             {
                 $query="update abilities set name=:n, description=:d, picture_url=:p, video_url=:v where id =:i";

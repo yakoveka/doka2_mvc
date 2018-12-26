@@ -33,7 +33,7 @@ class Controller_Heroes extends Controller
         $this->view->generate('edit_hero_view.php', 'template_view.php', array("data" => $data));
     }
 
-    function action_confirm_edit($hero_name)
+    function action_confirm_edit()
     {
         $hero=new Hero();
         $hero->name=$_POST['heroName'];
@@ -45,6 +45,7 @@ class Controller_Heroes extends Controller
         $hero->movespeed=$_POST['heroMovespeed'];
         $hero->armor=$_POST['heroArmor'];
         $hero->picture_url=$_POST['heroPicture'];
+        $hero->id=$_POST['heroId'];
 
         for($i=1;$i<5;$i++)
         {
@@ -58,7 +59,7 @@ class Controller_Heroes extends Controller
 
         }
         $data=$this->model->update_hero($hero);
-        //$this->view->generate('draft.php', 'temp;late_view.php', $data);
+        //$this->view->generate('draft_view.php', 'temp;late_view.php', $data);
         header('Location: /heroes');
     }
 }

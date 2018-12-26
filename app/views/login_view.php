@@ -5,3 +5,4 @@
     <input type="password" name="password"  placeholder="Пароль" required>
     <button  type="submit">Войти</button>
 </form>
+<p>Забыли пароль?<a href="/user/forgot">Тык.</a></p>
