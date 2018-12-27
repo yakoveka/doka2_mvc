@@ -33,7 +33,7 @@ class Controller_Register extends Controller
             $subject = 'Confirm email on the ' . $_SERVER['HTTP_HOST'];
             $message = 'Здравствуйте! <br/> <br/> Сегодня ' . date("d.m.Y", time()) . ', неким пользователем была произведена регистрация на сайте <a href="doka2.common">' .
                 $_SERVER['HTTP_HOST'] . '</a> используя Ваш email <br/>Если это были Вы, то, пожалуйста, подтвердите адрес вашей электронной почты, перейдя по этой ссылке: 
-                <a href="doka2.commonn/user/activation?token=' . $user->token . '&email=' . $user->email . '">'.$user->token.'</a> <br/> <br/> В противном случае, если это были не Вы, 
+                <a href="doka2.common/user/activation?token=' . $user->token . '&email=' . $user->email . '">'.$user->token.'</a> <br/> <br/> В противном случае, если это были не Вы, 
                 то, просто игнорируйте это письмо. 
                 <br/> <br/> <strong>Внимание!</strong> Ссылка действительна 24 часа. После чего Ваш аккаунт будет удален из базы.';
             $headers = 'From: yakovekoo@gmail.com' . "\r\n" .
@@ -47,6 +47,6 @@ class Controller_Register extends Controller
                 $init = "<p class='mesage_error' >Ошибка при отправлении письма с сылкой подтверждения, на почту " . $user->email . " </p>";
             }
         }
-        $this->view->generate('register_view.php', 'template_view.php', array("data" => $init));
+        $this->view->generate('draft_view.php', 'template_view.php', array("data" => $init));
     }
 }

@@ -27,7 +27,7 @@ class Controller_User extends Controller
         {
             $subject = 'Confirm email on the ' . $_SERVER['HTTP_HOST'];
             $message = 'Здравствуйте! <br/> <br/> Если вы запрашивали восстановление пароля к сайту doka2.common, то перейдите по ссылке:
-            <a href="doka2.commonn/user/forgotConfirm?token=' . $token . '&email=' . $email . '">'.$token.'</a> <br/> <br/> В противном случае, если это были не Вы, 
+            <a href="doka2.common/user/forgotConfirm?token=' . $token . '&email=' . $email . '">'.$token.'</a> <br/> <br/> В противном случае, если это были не Вы, 
                 то, просто игнорируйте это письмо.';
             $headers = 'From: yakovekoo@gmail.com' . "\r\n" .
                 'Reply-To: yakovekoo@gmail.com' . "\r\n" .

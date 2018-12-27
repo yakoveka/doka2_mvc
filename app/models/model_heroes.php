@@ -48,8 +48,8 @@ class Model_Heroes extends Model
         $cat = $pdo->prepare($query);
         $cat->setFetchMode(PDO::FETCH_CLASS, 'Hero');
         $cat->execute(['id' => $main_char]);
-        $hero = $cat->fetchAll();
-        return $hero;
+        $heroes = $cat->fetchAll();
+        return $heroes;
     }
 
     public function update_hero($hero)
