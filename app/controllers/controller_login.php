@@ -1,5 +1,7 @@
 <?php
-class Controller_Login extends Controller{
+
+class Controller_Login extends Controller
+{
 
     function __construct()
     {
@@ -7,31 +9,37 @@ class Controller_Login extends Controller{
         $this->view = new View();
     }
 
-    function action_index(){
+    function action_index($request)
+    {
         $this->view->generate('login_view.php', 'template_view.php', array("data" => null));
     }
 
-    function action_check($user_login, $user_password)
+    function action_check($request)
     {
-        $user_password=md5($user_password);
-        $data = $this->model->get_user_info($user_login);
-            if($data->login == $user_login and $data->password == $user_password)
-            {
-                $_SESSION['role'] = $data->role;
-                $_SESSION['password'] = $data->password;
-                $_SESSION['email'] = $data->email;
-                $_SESSION['first_name'] = $data->first_name;
-                $_SESSION['last_name'] = $data->last_name;
-                $_SESSION['login'] = $data->login;
-                $_SESSION['activated']=$data->activated;
-                header('Location: /');
-            }
-            else {
-                $this->view->generate('login_view.php', 'template_view.php', array("data"=>' Введенный логин или пароль неверен, попробуйте еще раз'));
-            }
+        $login = $request->getInputData('login');
+        $password = $request->getInputData('password');
+        $password = md5($password);
+        $data = $this->model->getInfoAboutUser($login);
+        if($data==false)
+        {
+            $this->view->generate('login_view.php', 'template_view.php', array("data" => ' Введенный логин или пароль неверен, попробуйте еще раз'));
+            die();
+        }
+        if ($data->login == $login and $data->password == $password) {
+            $_SESSION['role'] = $data->role;
+            $_SESSION['password'] = $data->password;
+            $_SESSION['email'] = $data->email;
+            $_SESSION['first_name'] = $data->first_name;
+            $_SESSION['last_name'] = $data->last_name;
+            $_SESSION['login'] = $data->login;
+            $_SESSION['activated'] = $data->activated;
+            header('Location: /');
+        } else {
+            $this->view->generate('login_view.php', 'template_view.php', array("data" => ' Введенный логин или пароль неверен, попробуйте еще раз'));
+        }
     }
 
-    function action_logout()
+    function action_logout($request)
     {
         Session::destroy();
         header('Location: /');

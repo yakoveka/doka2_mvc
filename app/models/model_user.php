@@ -9,10 +9,9 @@ class Model_User extends Model{
         return $pdo;
     }
 
-    public function get_User($login)
+    public function getInfoAboutUser($login)
     {
         $pdo=$this->connectBD();
-
         $query = "SELECT * from users WHERE login=:id";
         $cat = $pdo->prepare($query);
         $cat->setFetchMode(PDO::FETCH_CLASS, 'User');
@@ -21,9 +20,8 @@ class Model_User extends Model{
         return array($user);
     }
 
-    public function check_registration($token, $email){
+    public function validation($token, $email){
         $pdo=$this->connectBD();
-
         $query = "select token from users where email='$email'";
         $cat = $pdo->prepare($query);
         $cat->execute();
@@ -37,10 +35,9 @@ class Model_User extends Model{
         return false;
     }
 
-    public function forgot_password($email, $token)
+    public function forgotPasswordSetToken($email, $token)
     {
         $pdo=$this->connectBD();
-
         $query="update users set forgot_token=:t where email=:e";
         $cat=$pdo->prepare($query);
         if($cat->execute(["t"=>$token,"e"=>$email]))
@@ -48,9 +45,8 @@ class Model_User extends Model{
         else return false;
     }
 
-    public function forgotConfirm($token, $email){
+    public function forgotCheckToken($token, $email){
         $pdo=$this->connectBD();
-
         $query="select forgot_token from users where email='$email'";
         $cat=$pdo->prepare($query);
         $cat->execute();
@@ -64,7 +60,6 @@ class Model_User extends Model{
     public function changePassword($password, $email)
     {
         $pdo=$this->connectBD();
-
         $password=md5($password);
         $query="update users set password=:p, forgot_token=:f where email=:e";
         $cat=$pdo->prepare($query);
@@ -72,6 +67,5 @@ class Model_User extends Model{
             return true;
         else
             return false;
-
     }
 }

@@ -39,7 +39,6 @@
         </ul>
         <?php endif; ?>
         <div id="menu">
-
             <ul>
                 <li class="first active"><a href="/">Главная</a></li>
                 <li><a href="/heroes">Герои</a></li>

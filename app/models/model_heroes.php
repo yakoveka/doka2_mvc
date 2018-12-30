@@ -10,7 +10,7 @@ class Model_Heroes extends Model
         return $pdo;
     }
 
-    public function get_hero($hero_name)
+    public function getInfoAboutHero($hero_name)
     {
         //get all characteristics of hero, put it into $hero
         $pdo = $this->connectBD();
@@ -26,11 +26,10 @@ class Model_Heroes extends Model
         $cat->setFetchMode(PDO::FETCH_CLASS, 'Ability');
         $cat->execute(['h_id'=>$hero->id]);
         $hero->abilities= $cat->fetchAll();
-
         return $hero;
     }
 
-    public function get_heroes()
+    public function getAllHeroes()
     {
         $pdo = $this->connectBD();
         $query = "SELECT * from heroes";
@@ -41,7 +40,7 @@ class Model_Heroes extends Model
         return $heroes;
     }
 
-    public function get_heroes_by_main_characteristic($main_char)
+    public function getHeroesByMainCharacteristic($main_char)
     {
         $pdo = $this->connectBD();
         $query = "SELECT * from heroes WHERE mainAbility=:id";
@@ -52,16 +51,14 @@ class Model_Heroes extends Model
         return $heroes;
     }
 
-    public function update_hero($hero)
+    public function updateHero($hero)
     {
-        $routes = explode('/', $_SERVER['REQUEST_URI']);
         $pdo = $this->connectBD();
         try {
             $query = "update heroes set name=:n, mainAbility=:m, intelligence=:i, agility=:a, strength=:s, damage=:d, movespeed=:move, armor=:ar, picture_url=:p where id=:old";
             $cat = $pdo->prepare($query);
             $cat->execute(['old' => $hero->id, 'n' => $hero->name, 'm' => $hero->mainAbility, 'i' => $hero->intelligence, 'a' => $hero->agility, 's' => $hero->strength, 'd' => $hero->damage, 'move' => $hero->movespeed, 'ar' => $hero->armor, "p"=>$hero->picture_url]);
-            foreach ($hero->abilities as $ability)
-            {
+            foreach ($hero->abilities as $ability) {
                 $query="update abilities set name=:n, description=:d, picture_url=:p, video_url=:v where id =:i";
                 $cat = $pdo->prepare($query);
                 $cat->execute(['n'=>$ability->name, 'd'=>$ability->description, 'p'=>$ability->picture_url, 'v'=>$ability->video_url, 'i'=>$ability->id]);
