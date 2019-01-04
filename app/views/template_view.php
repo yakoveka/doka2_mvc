@@ -34,7 +34,7 @@
         </ul>
         <?php elseif(!empty($_SESSION['login'])): ?>
         <ul>
-            <li class="login"><a href="/user/<?php echo $_SESSION['login']?>"><?php echo $_SESSION['login']?></a></li>
+            <li class="login"><a href="/user/view/<?php echo $_SESSION['login']?>"><?php echo $_SESSION['login']?></a></li>
             <li class="login"><a href="/login/logout">Выйти</a></li>
         </ul>
         <?php endif; ?>

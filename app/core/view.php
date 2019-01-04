@@ -1,5 +1,6 @@
 <?php
 
+
 class View
 {
     function generate($content_view, $template_view, $parameters = null)

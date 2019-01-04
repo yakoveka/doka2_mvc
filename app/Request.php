@@ -24,6 +24,8 @@ class Request
             return $routes[3];
         if($routes[1]=='heroes' and !empty($routes[3]))
             return $routes[3];
+        if($routes[1]=='user')
+            return $routes[3];
     }
 
     public function getInputData($param)

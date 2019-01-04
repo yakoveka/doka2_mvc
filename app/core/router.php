@@ -4,6 +4,7 @@ class Router
 {
     static function start()
     {
+        spl_autoload_register();
         $controller_name = 'main';
         $action_name = 'index';
         $url=parse_url($_SERVER['REQUEST_URI']);

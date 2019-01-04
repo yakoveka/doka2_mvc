@@ -1,4 +1,6 @@
 <?php
+
+
 class Controller_User extends Controller
 {
     function __construct()
@@ -9,7 +11,7 @@ class Controller_User extends Controller
 
     function action_view($request)
     {
-        $login = $request->getInputData('login');
+        $login = $request->getInput();
         $data = $this->model->getInfoAboutUser($login);
         $this->view->generate('user_view.php', 'template_view.php', array("data" => $data));
     }

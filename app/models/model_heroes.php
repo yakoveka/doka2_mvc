@@ -1,4 +1,5 @@
 <?php
+
 require 'connection.php';
 
 class Model_Heroes extends Model

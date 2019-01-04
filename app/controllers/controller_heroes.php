@@ -1,5 +1,6 @@
 <?php
 
+
 class Controller_Heroes extends Controller
 {
     function __construct()
@@ -30,10 +31,14 @@ class Controller_Heroes extends Controller
 
     function action_edit($request)
     {
-        $hero_name=$request->getInput();
-        $hero_name=str_replace('_', ' ', $hero_name);
-        $data = $this->model->getInfoAboutHero($hero_name);
-        $this->view->generate('edit_hero_view.php', 'template_view.php', array("data" => $data));
+        if(!empty($request->session) and ($request->session['role']=='admin') or ($request->session['role']=='moder')) {
+            $hero_name = $request->getInput();
+            $hero_name = str_replace('_', ' ', $hero_name);
+            $data = $this->model->getInfoAboutHero($hero_name);
+            $this->view->generate('edit_hero_view.php', 'template_view.php', array("data" => $data));
+        }
+        else
+            header("Location: /");
     }
 
     function action_confirm_edit($request)

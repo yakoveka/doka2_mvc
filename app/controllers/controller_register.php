@@ -1,4 +1,6 @@
 <?php
+
+
 class Controller_Register extends Controller
 {
     function __construct()

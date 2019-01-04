@@ -1,4 +1,6 @@
 <?php
+
+
 class connection {
     private $pdo = null;
     public function getPdo()

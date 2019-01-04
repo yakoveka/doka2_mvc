@@ -1,4 +1,6 @@
 <?php
+
+
 class Controller_Posts extends Controller
 {
     function action_index()
