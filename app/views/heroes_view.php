@@ -18,6 +18,6 @@
 
 <div class="heroes">
     <?php foreach ($data as $hero): ?>
-    <a href="/heroes/view/<?php echo str_replace(' ', '_', $hero->name);?>" class="hero_item"><img src="<?php echo $hero->picture_url;?>" width="140" height="140" title="<?php echo str_replace('_', ' ', $hero->name);?>"></a>
+    <a href="/heroes/view/<?=str_replace(' ', '_', $hero->name)?>" class="hero_item"><img src="<?=$hero->picture_url?>" width="140" height="140"></a>
     <?php endforeach; ?>
 </div>

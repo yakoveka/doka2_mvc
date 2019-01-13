@@ -25,9 +25,11 @@ class Model_Heroes extends Model
         $query="select * from abilities where hero_id=:h_id";
         $cat=$pdo->prepare($query);
         $cat->setFetchMode(PDO::FETCH_CLASS, 'Ability');
-        $cat->execute(['h_id'=>$hero->id]);
-        $hero->abilities= $cat->fetchAll();
-        return $hero;
+        if($cat->execute(['h_id'=>$hero->id])) {
+            $hero->abilities = $cat->fetchAll();
+            return $hero;
+        }
+        else return false;
     }
 
     public function getAllHeroes()
@@ -37,8 +39,9 @@ class Model_Heroes extends Model
         $cat = $pdo->prepare($query);
         $cat->setFetchMode(PDO::FETCH_CLASS, 'Hero');
         $cat->execute();
-        $heroes = $cat->fetchAll();
-        return $heroes;
+        if($heroes = $cat->fetchAll())
+            return $heroes;
+        else return false;
     }
 
     public function getHeroesByMainCharacteristic($main_char)

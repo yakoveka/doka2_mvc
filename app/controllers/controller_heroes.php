@@ -11,30 +11,36 @@ class Controller_Heroes extends Controller
 
     function action_view($request)
     {
-        $hero_id=$request->getInput();
-        $hero = $this->model->getInfoAboutHero($hero_id);
-        $this->view->generate('hero_view.php', 'template_view.php', array("hero" => $hero));
+        $heroId=$request->getInputData('heroId');
+        $hero = $this->model->getInfoAboutHero($heroId);
+        if(!empty($hero))
+            $this->view->generate('hero_view.php', 'template_view.php', array("hero" => $hero));
+        else
+            header ("Location: /404");
     }
 
     function action_index($request)
     {
         $data = $this->model->getAllHeroes();
-        $this->view->generate('heroes_view.php', 'template_view.php', array("data" => $data));
+        if(!empty($data))
+            $this->view->generate('heroes_view.php', 'template_view.php', array("data" => $data));
+        else
+            header("Location: /404");
     }
 
     function action_main_characteristic($request)
     {
-        $main_char=$request->getInput();
-        $data = $this->model->getHeroesByMainCharacteristic($main_char);
+        $mainCharacteristic=$request->getInputData('mainCharacteristic');
+        $data = $this->model->getHeroesByMainCharacteristic($mainCharacteristic);
         $this->view->generate('main_characteristic_view.php', 'template_view.php', array("data" => $data));
     }
 
     function action_edit($request)
     {
         if(!empty($request->session) and ($request->session['role']=='admin') or ($request->session['role']=='moder')) {
-            $hero_name = $request->getInput();
-            $hero_name = str_replace('_', ' ', $hero_name);
-            $data = $this->model->getInfoAboutHero($hero_name);
+            $heroName = $request->getInputData('heroName');
+            $heroName = str_replace('_', ' ', $heroName);
+            $data = $this->model->getInfoAboutHero($heroName);
             $this->view->generate('edit_hero_view.php', 'template_view.php', array("data" => $data));
         }
         else
@@ -65,5 +71,10 @@ class Controller_Heroes extends Controller
         }
         $this->model->updateHero($hero);
         header('Location: /heroes');
+    }
+
+    function action_comment($request)
+    {
+
     }
 }

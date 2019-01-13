@@ -4,7 +4,6 @@ class Router
 {
     static function start()
     {
-        spl_autoload_register();
         $controller_name = 'main';
         $action_name = 'index';
         $url=parse_url($_SERVER['REQUEST_URI']);
@@ -27,7 +26,7 @@ class Router
             include "app/controllers/" . $controller_file;
         else
             Router::ErrorPage404();
-        $controller = new $controller_name;
+        $controller = new $controller_name();
         $action = $action_name;
         $request = new Request();
         if(method_exists($controller,$action))

@@ -20,12 +20,14 @@ class Request
     {
         $url=parse_url($this->server['REQUEST_URI']);
         $routes = explode('/', $url['path']);
-        if($routes[1]=='heroes' and empty($routes[3]))
+        $routes[3] = str_replace("_", " ", $routes[3]);
+        /*if($routes[1]=='heroes' and empty($routes[3]))
             return $routes[3];
         if($routes[1]=='heroes' and !empty($routes[3]))
             return $routes[3];
         if($routes[1]=='user')
-            return $routes[3];
+            return $routes[3];*/
+        return $routes[3];
     }
 
     public function getInputData($param)
@@ -37,5 +39,14 @@ class Request
         if(!empty($this->post))
             if(!empty($this->post[$param]))
                 return $this->post[$param];
+
+        $url=parse_url($this->server['REQUEST_URI']);
+        $routes = explode('/', $url['path']);
+        if(!empty($routes[3]))
+            $routes[3] = str_replace("_", " ", $routes[3]);
+        if($routes[1]=='heroes' and !empty($routes[3]))
+            return $routes[3];
+        if($routes[1]=='user' and $routes[2]=='view')
+            return $routes[3];
     }
 }

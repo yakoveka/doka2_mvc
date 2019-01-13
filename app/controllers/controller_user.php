@@ -11,7 +11,7 @@ class Controller_User extends Controller
 
     function action_view($request)
     {
-        $login = $request->getInput();
+        $login = $request->getInputData('login');
         $data = $this->model->getInfoAboutUser($login);
         $this->view->generate('user_view.php', 'template_view.php', array("data" => $data));
     }

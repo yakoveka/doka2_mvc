@@ -3,7 +3,7 @@
 
 class View
 {
-    function generate($content_view, $template_view, $parameters = null)
+    function generate($content_view, $template_view, $parameters)
     {
         if (!empty($parameters)) {
             extract($parameters);

@@ -1,40 +1,36 @@
-<h1 class="header_name">
-    <?php echo $hero->name; ?>
-</h1>
+<h1><?= $hero->name; ?></h1>
 <?php if (!empty($_SESSION['role']) and ($_SESSION['role'] == 'admin' or $_SESSION['role'] == 'moder')) : ?>
-    <form class="edit" action="/heroes/edit/<?php echo str_replace(' ', '_', $hero->name); ?>" method="post">
-        <button type="submit">Редактировать</button>
-    </form>
+    <div id="edit">
+        <a href="/heroes/edit/<?=str_replace(' ', '_', $hero->name)?>">Редактировать</a>
+    </div>
 <?php endif; ?>
 <div id="overviewInner">
     <div id="overviewHeroLeft">
         <div class="heroIcon">
-            <img src="<?php echo $hero->picture_url; ?>" width="170" height="200">
+            <img src="<?php echo $hero->picture_url; ?>" width="235" height="272">
         </div>
-        <div id="hero_overview">
-            <img id="overviewIcon" title="Intelligence"
+        <div id="heroOverviewPrimaryStats">
+            <img id="overviewIcon_Int" title="Intelligence"
                  src="http://cdn.dota2.com/apps/dota2/images/heropedia/overviewicon_int.png" width="33" height="33">
-            <div id="overview_int"
-                 class="overview_stat"><?php echo $hero->intelligence; ?></div>
-            <img id="overviewIcon1" title="Intelligence"
+            <div class="overview_StatVal" id="overview_IntVal"><?php echo $hero->intelligence; ?></div>
+            <img id="overviewIcon_Agi" title="Agility"
                  src="http://cdn.dota2.com/apps/dota2/images/heropedia/overviewicon_agi.png" width="33" height="33">
-            <div id="overview_agil" class="overview_stat"><?php echo $hero->agility; ?></div>
-            <img id="overviewIcon2" title="Strength"
+            <div class="overview_StatVal" id="overview_AgiVal"><?php echo $hero->agility; ?></div>
+            <img id="overviewIcon_Str" title="Strength"
                  src="http://cdn.dota2.com/apps/dota2/images/heropedia/overviewicon_str.png" width="33" height="33">
-            <div id="overview_str" class="overview_stat"><?php echo $hero->strength; ?></div>
-            <img id="overviewIcon3" title="Attack"
+            <div class="overview_StatVal" id="overview_StrVal"><?php echo $hero->strength; ?></div>
+            <img id="overviewIcon_Attack" title="Attack"
                  src="http://cdn.dota2.com/apps/dota2/images/heropedia/overviewicon_attack.png" width="46"
                  height="35">
-            <div id="overview_att" class="overview_stat"><?php echo $hero->damage; ?></div>
-            <img id="overviewIcon4" title="Movespeed"
+            <div class="overview_StatVal" id="overview_AttackVal"><?php echo $hero->damage; ?></div>
+            <img id="overviewIcon_Speed" title="Movespeed"
                  src="http://cdn.dota2.com/apps/dota2/images/heropedia/overviewicon_speed.png" width="63"
                  height="39">
-            <div id="overview_movespeed"
-                 class="overview_stat"><?php echo $hero->movespeed; ?></div>
-            <img id="overviewIcon5" title="Armor"
+            <div class="overview_StatVal" id="overview_SpeedVal"><?php echo $hero->movespeed; ?></div>
+            <img id="overviewIcon_Defense" title="Armor"
                  src="http://cdn.dota2.com/apps/dota2/images/heropedia/overviewicon_defense.png" width="39"
                  height="37">
-            <div id="overview_armor" class="overview_stat"><?php echo $hero->armor; ?></div>
+            <div class="overview_StatVal" id="overview_DefenseVal"><?php echo $hero->armor; ?></div>
         </div>
     </div>
     <div id="overviewHeroAbilities">
@@ -54,5 +50,4 @@
             </div>
         <?php endforeach; ?>
     </div>
-
 </div>
