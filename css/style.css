@@ -249,3 +249,93 @@ nav{
     margin: 0 auto;
     display: block;
 }
+
+.login-form p{
+    text-align: center;
+}
+
+#comments{
+    padding: 10px 0;
+    width: 850px;
+    text-align: left;
+    display: inline-block;
+}
+
+.singleComment{
+    display: flex;
+    width: 850px;
+    margin: 50px 0;
+}
+
+.overviewCommentLeft{
+    float: left;
+    width: 270px;
+}
+
+.overviewCommentRight{
+    text-align: right;
+    float: right;
+    width: 565px;
+}
+#comment textarea{
+    width: 850px;
+    height: 100px;
+}
+
+#comment button{
+    float: right;
+}
+
+#itemsHeader {
+    padding: 8px 10px;
+    height: auto;
+    display: inline-grid;
+}
+
+#itemTopRow {
+    margin-bottom: 5px;
+}
+
+.largeItemImg {
+    float: left;
+    clear: both;
+    width: 182px;
+    height: 138px;
+    border: solid #242424 3px;
+    margin-right: 10px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+.itemBoxDetails {
+    float: left;
+}
+
+#itemsHeader .itemName {
+    margin-left: 5px;
+    font-size: 18px;
+    font-family: KoreanFont,georgia,serif;
+    text-transform: uppercase;
+}
+
+.goldIcon {
+    float: left;
+    margin: 2px 4px 0 5px;
+}
+
+.goldCost {
+    font-weight: bold;
+    color: #f5c433;
+    font-size: 15px;
+    margin: 0;
+    padding: 0;
+}
+
+.detailBoxCol {
+    float: left;
+    width: 450px;
+    margin: 10px;
+    font-size: 14px;
+    line-height: 17px;
+}
+

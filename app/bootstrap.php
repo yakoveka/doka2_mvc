@@ -7,4 +7,6 @@ require_once 'Hero.php';
 require_once 'User.php';
 require_once 'Ability.php';
 require_once 'Request.php';
+require_once 'Comment.php';
+require_once 'Item.php';
 Router::start();

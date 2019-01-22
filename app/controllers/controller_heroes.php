@@ -12,9 +12,11 @@ class Controller_Heroes extends Controller
     function action_view($request)
     {
         $heroId=$request->getInputData('heroId');
-        $hero = $this->model->getInfoAboutHero($heroId);
+        $array = $this->model->getInfoAboutHero($heroId);
+        $hero = $array["hero"];
+        $comment = $array["comment"];
         if(!empty($hero))
-            $this->view->generate('hero_view.php', 'template_view.php', array("hero" => $hero));
+            $this->view->generate('hero_view.php', 'template_view.php', array("hero" => $hero, "comment"=>$comment));
         else
             header ("Location: /404");
     }
@@ -40,7 +42,8 @@ class Controller_Heroes extends Controller
         if(!empty($request->session) and ($request->session['role']=='admin') or ($request->session['role']=='moder')) {
             $heroName = $request->getInputData('heroName');
             $heroName = str_replace('_', ' ', $heroName);
-            $data = $this->model->getInfoAboutHero($heroName);
+            $array = $this->model->getInfoAboutHero($heroName);
+            $data = $array["hero"];
             $this->view->generate('edit_hero_view.php', 'template_view.php', array("data" => $data));
         }
         else
@@ -70,11 +73,21 @@ class Controller_Heroes extends Controller
                 $hero->abilities[] = $ability;
         }
         $this->model->updateHero($hero);
-        header('Location: /heroes');
+        header('Location: /heroes/view/'.str_replace(' ', '_', $hero->name));
     }
 
     function action_comment($request)
     {
-
+        $comment = new Comment();
+        $comment->user=$request->session['login'];
+        $comment->classId = 1;
+        $comment->itemId = $request->getInputData('heroId');
+        $comment->itemId = str_replace('_', ' ', $comment->itemId);
+        $comment->comment=$request->getInputData('comment');
+        $data = $this->model->writeComment($comment);
+        if($data==true)
+            header ('Location: /heroes/view/'.str_replace(' ', '_', $request->getInputData('heroId')));
+        else
+            $this->view->generate('draft_view.php', 'template_view.php', array("data"=>"Пожалуйста, повторите попытку"));
     }
 }

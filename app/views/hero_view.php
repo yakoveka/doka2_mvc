@@ -1,7 +1,7 @@
 <h1><?= $hero->name; ?></h1>
 <?php if (!empty($_SESSION['role']) and ($_SESSION['role'] == 'admin' or $_SESSION['role'] == 'moder')) : ?>
     <div id="edit">
-        <a href="/heroes/edit/<?=str_replace(' ', '_', $hero->name)?>">Редактировать</a>
+        <a href="/heroes/edit/<?= str_replace(' ', '_', $hero->name) ?>">Редактировать</a>
     </div>
 <?php endif; ?>
 <div id="overviewInner">
@@ -50,4 +50,31 @@
             </div>
         <?php endforeach; ?>
     </div>
+    <div id="comments">
+    <?php if (isset($comment)): ?>
+            <?php foreach ($comment as $single): ?>
+                <div class="singleComment">
+                    <div class="overviewCommentLeft">
+                        <?= $single->user ?><br/>
+                        <?= date("d.m.Y", strtotime($single->date)) ?><br/>
+                        <?= date("h:i", strtotime($single->date)) ?>
+                    </div>
+                    <div class="overviewCommentRight">
+                        <?= $single->comment ?>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+    <?php endif; ?>
+    </div>
+    <?php if (isset($_SESSION['activated']) and $_SESSION['activated'] == 1): ?>
+        <div id="comment">
+            <form action="/heroes/comment/<?=str_replace(' ', '_', $hero->name)?>" method="post">
+                <input type="hidden" name="heroId" value="<?= $hero->name ?>">
+                Оставьте ваш комментарий: <br/><textarea name="comment"></textarea><br/>
+                <button type="submit">Комментировать</button>
+            </form>
+        </div>
+    <?php else: ?>
+        <h4>Комментировать могут только зарегестрированные пользователи!</h4>
+    <?php endif; ?>
 </div>

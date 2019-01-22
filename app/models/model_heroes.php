@@ -11,10 +11,11 @@ class Model_Heroes extends Model
         return $pdo;
     }
 
-    public function getInfoAboutHero($hero_name)
+    public function getInfoAboutHero($heroName)
     {
         //get all characteristics of hero, put it into $hero
         $pdo = $this->connectBD();
+        $hero_name = str_replace('_', ' ', $heroName);
         $query = "SELECT * from heroes WHERE name=:id";
         $cat = $pdo->prepare($query);
         $cat->setFetchMode(PDO::FETCH_CLASS, 'Hero');
@@ -25,9 +26,14 @@ class Model_Heroes extends Model
         $query="select * from abilities where hero_id=:h_id";
         $cat=$pdo->prepare($query);
         $cat->setFetchMode(PDO::FETCH_CLASS, 'Ability');
-        if($cat->execute(['h_id'=>$hero->id])) {
+        if($cat->execute(['h_id'=>$hero->id])){
             $hero->abilities = $cat->fetchAll();
-            return $hero;
+            $query="select * from comments where class_id=1 and item_id='$hero_name'";
+            $cat=$pdo->prepare($query);
+            $cat->setFetchMode(PDO::FETCH_CLASS, 'Comment');
+            $cat->execute();
+            $comment = $cat->fetchAll();
+            return array("hero"=>$hero, "comment"=>$comment);
         }
         else return false;
     }
@@ -71,5 +77,15 @@ class Model_Heroes extends Model
         }catch (PDOException $e) {
             return 'Ошибка в изменении данных';
         }
+    }
+
+    public function writeComment($comment)
+    {
+        $pdo=$this->connectBD();
+        $comment->itemId = str_replace('_', ' ', $comment->itemId);
+        $query="insert into comments (class_id, item_id, user, date, comment) values ('$comment->classId', '$comment->itemId', '$comment->user', NOW(), '$comment->comment')";
+        $cat=$pdo->prepare($query);
+        $cat->execute();
+        return $cat;
     }
 }

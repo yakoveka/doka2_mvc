@@ -11,7 +11,7 @@ class Controller_Register extends Controller
 
     function action_index($request)
     {
-        $this->view->generate('register_view.php', 'template_view.php', array('data' => 'register'));
+        $this->view->generate('register_view.php', 'template_view.php', array("data" => 'Register'));
     }
 
     function action_writeUser($request)
@@ -32,7 +32,7 @@ class Controller_Register extends Controller
         }
         $flag = $this->model->setInfoAboutUser($user);
         if ($flag == false) {
-            $this->view->generate('register_view.php', 'template_view.php', array("data" => "Что-то пошло не так"));
+            $this->view->generate('register_view.php', 'template_view.php', array("data" => "Введенный логин уже занят, попробуйте другой"));
             die();
         } elseif ($flag == true) {
             $subject = 'Confirm email on the ' . $_SERVER['HTTP_HOST'];

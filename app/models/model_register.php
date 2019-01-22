@@ -21,7 +21,7 @@ class Model_Register extends Model
         $result = $pdo->prepare("select id from users where login='$user->login'");
         $result->execute();
         $myRow = $result->fetch();
-        if(!empty($myRow['user_id']))
+        if(!empty($myRow['id']))
             return false;
         $result = $pdo->prepare("insert into users (login, password, email, first_name, last_name, date_of_registration, token) values('$user->login', '$user->password', '$user->email', '$user->first_name', '$user->last_name', NOW(), '$user->token') ");
         $result->execute();

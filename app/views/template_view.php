@@ -16,6 +16,12 @@
             <div class="logo">
                 <a href="/"><img src="/images/header_logo.jpg" width="130" height="130" border="0"></a>
             </div>
+            <div class="search">
+                <form name="search" action="#" method="get">
+                    <input type="text" name="q" placeholder="Искать">
+                    <button type="submit">Поиск</button>
+                </form>
+            </div>
             <nav>
                 <?php if (empty($_SESSION['login'])): ?>
                     <ul>
