@@ -103,77 +103,77 @@ nav{
     position: relative;
 }
 
-#overviewIcon_Int {
+#overviewIconInt {
     position: absolute;
     left: 6px;
     top: 5px;
     z-index: 5;
 }
 
-.overview_StatVal {
+.overviewStatVal {
     position: absolute;
     font-size: 14px;
     font-weight: bold;
 }
 
-#overview_IntVal {
+#overviewIntVal {
     top: 14px;
     left: 47px;
 }
 
-#overviewIcon_Agi {
+#overviewIconAgi {
     position: absolute;
     left: 6px;
     top: 47px;
     z-index: 5;
 }
 
-#overview_AgiVal {
+#overviewAgiVal {
     top: 54px;
     left: 47px;
 }
 
-#overviewIcon_Str {
+#overviewIconStr {
     position: absolute;
     left: 6px;
     top: 87px;
     z-index: 5;
 }
 
-#overview_StrVal {
+#overviewStrVal {
     top: 94px;
     left: 47px;
 }
 
-#overviewIcon_Attack {
+#overviewIconAttack {
     position: absolute;
     left: 124px;
     top: 5px;
 }
 
-#overview_AttackVal {
+#overviewAttackVal {
     top: 14px;
     left: 178px;
 }
 
-#overviewIcon_Speed {
+#overviewIconSpeed {
     position: absolute;
     left: 117px;
     top: 43px;
 }
 
-#overview_SpeedVal {
+#overviewSpeedVal {
     top: 54px;
     left: 178px;
 }
 
-#overviewIcon_Defense {
+#overviewIconDefense {
     position: absolute;
     left: 122px;
     top: 82px;
 }
 
-#overview_DefenseVal {
+#overviewDefenseVal {
     top: 94px;
     left: 178px;
 }
@@ -265,6 +265,7 @@ nav{
     display: flex;
     width: 850px;
     margin: 50px 0;
+    border: 1px solid purple;
 }
 
 .overviewCommentLeft{
@@ -337,5 +338,42 @@ nav{
     margin: 10px;
     font-size: 14px;
     line-height: 17px;
+}
+
+.searchResult{
+    display: inline-block;
+    width: 50px;
+    margin: 10px 10px;
+    height: 50px;
+}
+
+.heroHeader h1{
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    font-family: Century;
+}
+
+table {
+    width: 900px;
+    text-align: center;
+    border: 1px solid grey;
+}
+
+th{
+    border: 1px solid grey;
+}
+
+td{
+    border: 1px solid grey;
+}
+
+.showUsers a{
+    position: relative;
+    float: right;
+    display: inline-block;
+    text-decoration: none;
+    color: purple;
+    font-size: 20px;
+    border: 1px solid purple;
 }
 
