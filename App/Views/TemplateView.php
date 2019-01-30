@@ -5,8 +5,8 @@
     <title>Learning dota2</title>
     <link href="http://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href="http://fonts.googleapis.com/css?family=Kreon" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="/css/style.css">
-    <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="stylesheet" type="text/css" href="/Css/style.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/Images/favicon.ico">
 </head>
 
 <body>
@@ -14,7 +14,7 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <a href="/"><img src="/images/header_logo.jpg" width="130" height="130" border="0"></a>
+                <a href="/"><img src="/Images/header_logo.jpg" width="130" height="130" border="0"></a>
             </div>
             <div class="search">
                 <form name="search" action="/search" method="get">

@@ -1,24 +1,34 @@
 <?php
 
 namespace Core;
+
 use \PDO;
 use \PDOException;
 
-class Connection {
-    private $pdo = null;
+class Connection
+{
+    private static $instance = null;
+
     public function getPdo()
     {
-        return $this->pdo;
+        return self::$instance;
     }
-    public function __construct($user)
+
+    public function __construct()
     {
-        if($user=='root') {
-            try {
-                $this->pdo = new PDO('mysql:host=localhost;dbname=doka2_common', 'root', '3014');
-                $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            } catch (PDOException $e) {
-                echo "Error";
-            }
+        try {
+            self::$instance = new PDO('mysql:host=localhost;dbname=doka2_common', 'root', '3014');
+            self::$instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            echo "Error";
         }
+    }
+
+    static public function getInstance()
+    {
+        if (is_null(self::$instance)) {
+            self::$instance = new self();
+        }
+        return self::$instance;
     }
 }

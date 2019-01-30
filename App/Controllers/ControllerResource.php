@@ -15,8 +15,9 @@ class ControllerResource extends Controller
         $methodName="getAll".$parameter;
         $param = $this->model->$methodName();
         $parameter = strtolower($parameter);
+        $fileName = ucfirst($parameter);
         if(!empty($param))
-            $this->view->generate($parameter.'View.php', array("$parameter" => $param));
+            $this->view->generate($fileName.'View.php', array("$parameter" => $param));
         else
             header("Location: /404");
     }

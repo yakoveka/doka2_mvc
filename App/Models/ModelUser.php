@@ -57,7 +57,7 @@ class ModelUser extends Model
     public function changePassword($password, $email)
     {
         $pdo=$this->connectDB();
-        $password=md5($password);
+        $password=password_hash($password, PASSWORD_BCRYPT);
         $query="update users set password=:p, forgotToken=:f where email=:e";
         $cat=$pdo->prepare($query);
         if($cat->execute(["p"=>$password, "e"=>$email, "f"=>null]))

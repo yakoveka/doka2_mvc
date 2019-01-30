@@ -83,7 +83,7 @@ class ControllerHeroes extends ControllerResource
 
     function actionComment(Request $request)
     {
-        if (isset($_SESSION['activated']) and $_SESSION['activated'] == 1) {
+        if (isset($request->session['activated']) and $request->session['activated'] == 1) {
             $comment = new Comment();
             $comment->user = $request->session['login'];
             $comment->classId = 1;

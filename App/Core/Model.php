@@ -7,8 +7,8 @@ class Model
 {
     public function connectDB()
     {
-        $databaseConnection = new connection('root');
-        $pdo = $databaseConnection->getPdo();
+        $databaseConnection = new Connection();
+        $pdo = $databaseConnection::getInstance();
         return $pdo;
     }
 }

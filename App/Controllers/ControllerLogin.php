@@ -25,14 +25,13 @@ class ControllerLogin extends Controller
     {
         $login = $request->getInputData('login');
         $password = $request->getInputData('password');
-        $password = md5($password);
         $data = $this->model->getInfoAboutUser($login);
         if($data==false)
         {
             $this->view->generate('LoginView.php', array("data" => ' Введенный логин или пароль неверен, попробуйте еще раз'));
             die();
         }
-        if ($data->login == $login and $data->password == $password) {
+        if ($data->login == $login and password_verify($password, $data->password)) {
             $_SESSION['role'] = $data->role;
             $_SESSION['password'] = $data->password;
             $_SESSION['email'] = $data->email;

@@ -17,7 +17,7 @@ class ControllerRegister extends Controller
 
     function actionIndex(Request $request)
     {
-        $this->view->generate('registerView.php', array("data" => 'Register'));
+        $this->view->generate('RegisterView.php', array("data" => 'Register'));
     }
 
     function actionWriteUser(Request $request)

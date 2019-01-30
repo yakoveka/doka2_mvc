@@ -8,7 +8,7 @@ class ModelRegister extends Model
     public function setInfoAboutUser($user)
     {
         $pdo=$this->connectDB();
-        $user->password=md5($user->password);
+        $user->password=password_hash($user->password, PASSWORD_BCRYPT);
         $result = $pdo->prepare("select id from users where login='$user->login'");
         $result->execute();
         $myRow = $result->fetch();
