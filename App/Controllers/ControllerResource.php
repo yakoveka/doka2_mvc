@@ -9,7 +9,7 @@ class ControllerResource extends Controller
 
     function actionIndex(Request $request)
     {
-        $url=parse_url($_SERVER['REQUEST_URI']);
+        $url=parse_url($request->server['REQUEST_URI']);
         $routes = explode('/', $url['path']);
         $parameter = ucfirst($routes[1]);
         $methodName="getAll".$parameter;
@@ -17,7 +17,10 @@ class ControllerResource extends Controller
         $parameter = strtolower($parameter);
         $fileName = ucfirst($parameter);
         if(!empty($param))
-            $this->view->generate($fileName.'View.php', array("$parameter" => $param));
+            //if(isset($request->api))
+                $this->view->generate($fileName.'View.php', array("$parameter" => $param, "api" => $request->api));
+            //else
+                //$this->view->generate($fileName.'View.php', array("$parameter" => $param));
         else
             header("Location: /404");
     }

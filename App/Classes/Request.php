@@ -9,6 +9,7 @@ class Request
     public $cookie;
     public $server;
     public $session;
+    public $api;
 
     public function __construct()
     {
@@ -30,7 +31,7 @@ class Request
                 return $this->post[$parameter];
         $url=parse_url($this->server['REQUEST_URI']);
         $routes = explode('/', $url['path']);
-        if($routes[2]=='ConfirmEdit')
+        if(!empty($routes[2]) and $routes[2]=='ConfirmEdit')
             return null;
         if(!empty($routes[3]))
             $routes[3] = str_replace("_", " ", $routes[3]);

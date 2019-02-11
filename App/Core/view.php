@@ -9,6 +9,9 @@ class View
         if (!empty($parameters)) {
             extract($parameters);
         }
-        include 'App/Views/TemplateView.php';
+        if(isset($parameters["api"]) and $parameters["api"]=="react")
+            echo json_encode($parameters);
+        else
+            include 'App/Views/TemplateView.php';
     }
 }

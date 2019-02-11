@@ -13,7 +13,7 @@
 <div id="wrapper">
     <header>
         <div class="header-container">
-            <div class="logo">
+            <div id="logo">
                 <a href="/"><img src="/Images/header_logo.jpg" width="130" height="130" border="0"></a>
             </div>
             <div class="search">
@@ -30,7 +30,8 @@
                     </ul>
                 <?php elseif (!empty($_SESSION['login'])): ?>
                     <ul>
-                        <li class="login"><a href="/user/view/<?php echo $_SESSION['login'] ?>"><?php echo $_SESSION['login'] ?></a>
+                        <li class="login"><a
+                                    href="/user/view/<?php echo $_SESSION['login'] ?>"><?php echo $_SESSION['login'] ?></a>
                         </li>
                         <li class="login"><a href="/login/Logout">Выйти</a></li>
                     </ul>
@@ -48,9 +49,10 @@
     </header>
     <div id="page">
         <div id="content">
-            <div class="box">
-                <?php include 'App/Views/' . $content_view; ?>
+            <div id="box">
+                <?php include 'App/Views/' . $content_view;?>
             </div>
+            <div id="box1"></div>
         </div>
     </div>
     <div id="page-bottom">
@@ -70,3 +72,21 @@
 </div>
 </body>
 </html>
+
+
+<script type="text/babel">
+    class Logo extends React.Component {
+        render() {
+            return (
+                <React.Fragment>
+
+                </React.Fragment>
+            )
+        }
+    }
+
+    ReactDOM.render(
+        <Logo/>,
+        document.getElementById('logo')
+    )
+</script>

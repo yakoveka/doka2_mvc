@@ -12,7 +12,6 @@ require_once __DIR__ . '/App/Classes/bootstrap.php';
 
 
 
-
 //перенос способностей в отдельную таблицу
 /*$pdo = new PDO('mysql:host=localhost;dbname=doka2_common', 'root', '3014');
 for($i=1; $i<80;$i++) {

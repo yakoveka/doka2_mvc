@@ -11,6 +11,23 @@ class Router
         $actionName = 'Index';
         $url=parse_url($_SERVER['REQUEST_URI']);
         $routes = explode('/', $url['path']);
+        if($routes[1]=="api"){
+            array_splice($routes, 0, 1);
+            $api = "react";
+        }
+        $request = new Request();
+        if(isset($api)) {
+            $request->api = $api;
+            if(isset($routes[1])) {
+                $request_uri = "/" . $routes[1];
+                for ($i = 2; $i < count($routes); $i++) {
+                    $request_uri .= "/" . $routes[$i];
+                }
+            }
+            else
+                $request_uri = "/";
+            $request->server["REQUEST_URI"] = $request_uri;
+        }
         if (!empty($routes[1]))
             $controllerName = $routes[1];
         if (!empty($routes[2]))
@@ -25,7 +42,6 @@ class Router
             Router::ErrorPage404();
         $controller = new $controllerName();
         $action = $actionName;
-        $request = new Request();
         if(method_exists($controller,$action))
             $controller->$action($request);
         else

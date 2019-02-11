@@ -26,7 +26,7 @@ class ControllerHeroes extends ControllerResource
         $hero = $this->model->getInfoAboutHero($heroName);
         $comment = $modelComments->getHeroComments($heroName);
         if(!empty($hero->abilities))
-            $this->view->generate('HeroView.php', array("hero" => $hero, "comment"=>$comment));
+            $this->view->generate('HeroView.php', array("hero" => $hero, "comment"=>$comment, "api" => $request->api));
         else
             header ("Location: /404");
     }
@@ -40,7 +40,7 @@ class ControllerHeroes extends ControllerResource
     {
         $mainCharacteristic=$request->getInputData('mainCharacteristic');
         $heroes = $this->model->getHeroesByMainCharacteristic($mainCharacteristic);
-        $this->view->generate('MainCharacteristicView.php', array("heroes" => $heroes));
+        $this->view->generate('MainCharacteristicView.php', array("heroes" => $heroes, "api" => $request->api));
     }
 
     function actionEdit(Request $request)
@@ -49,7 +49,7 @@ class ControllerHeroes extends ControllerResource
             $heroName = $request->getInputData('heroName');
             $heroName = str_replace('_', ' ', $heroName);
             $hero = $this->model->getInfoAboutHero($heroName);
-            $this->view->generate('EditHeroView.php', array("hero" => $hero));
+            $this->view->generate('EditHeroView.php', array("hero" => $hero, "api" => $request->api));
         }
         else
             header("Location: /");
