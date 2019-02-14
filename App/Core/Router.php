@@ -7,12 +7,14 @@ class Router
 {
     static function start()
     {
+        if($_SERVER['REQUEST_METHOD']=="OPTIONS")
+            die();
         $controllerName = 'Main';
         $actionName = 'Index';
         $url=parse_url($_SERVER['REQUEST_URI']);
         $routes = explode('/', $url['path']);
         if($routes[1]=="api"){
-            array_splice($routes, 0, 1);
+            array_splice($routes, 1, 1);
             $api = "react";
         }
         $request = new Request();

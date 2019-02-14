@@ -7,8 +7,7 @@ use \PDOException;
 
 class ModelHeroes extends Model
 {
-    public function getInfoAboutHero($heroName)
-    {
+    public function getInfoAboutHero($heroName){
         //get all characteristics of hero, put it into $hero
         $pdo = $this->connectDB();
         $heroName = str_replace('_', ' ', $heroName);
@@ -28,7 +27,8 @@ class ModelHeroes extends Model
                 return $hero;
             }
         }
-        else return false;
+        else
+            return false;
     }
 
     public function getAllHeroes()

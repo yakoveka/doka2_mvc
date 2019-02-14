@@ -45,7 +45,15 @@ class ControllerHeroes extends ControllerResource
 
     function actionEdit(Request $request)
     {
-        if(!empty($request->session) and ($request->session['role']=='admin') or ($request->session['role']=='moder')) {
+/*        if(!empty($request->session) and ($request->session['role']=='admin') or ($request->session['role']=='moder')) {
+            $heroName = $request->getInputData('heroName');
+            $heroName = str_replace('_', ' ', $heroName);
+            $hero = $this->model->getInfoAboutHero($heroName);
+            $this->view->generate('EditHeroView.php', array("hero" => $hero, "api" => $request->api));
+       }
+       else*/
+        if($request->api == 'react')
+        {
             $heroName = $request->getInputData('heroName');
             $heroName = str_replace('_', ' ', $heroName);
             $hero = $this->model->getInfoAboutHero($heroName);
@@ -78,7 +86,7 @@ class ControllerHeroes extends ControllerResource
                 $hero->abilities[] = $ability;
         }
         $this->model->updateHero($hero);
-        header('Location: /heroes/view/'.str_replace(' ', '_', $hero->name));
+        //header('Location: /heroes/view/'.str_replace(' ', '_', $hero->name));
     }
 
     function actionComment(Request $request)

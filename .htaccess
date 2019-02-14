@@ -2,6 +2,8 @@ AddDefaultCharset utf-8
 AddCharset utf-8 .html .css .js .xml .json .rss .atom .md
 Options +Indexes
 Header Set Access-Control-Allow-Origin *
+Header Set Access-Control-Allow-Methods GET,HEAD,OPTIONS,POST,PUT
+Header Set Access-Control-Allow-Headers Content-Type
 RewriteEngine On
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
